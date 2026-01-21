@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-bg text-slate-100 antialiased;
+  }
+
+  a {
+    @apply text-slate-100/90 hover:text-white;
+  }
+
+  ::selection {
+    @apply bg-indigo-500/40;
+  }
+}
+
+@layer components {
+  .surface {
+    @apply rounded-2xl border border-white/10 bg-white/5 shadow-sm;
+  }
+
+  .muted {
+    @apply text-slate-200/70;
+  }
+}
