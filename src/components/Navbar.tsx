@@ -33,6 +33,7 @@ function MenuIcon({ open }: { open: boolean }) {
 export function Navbar() {
   const [open, setOpen] = useState(false)
   const [activeId, setActiveId] = useState<(typeof navItems)[number]['id'] | null>(null)
+  const [scrollProgress, setScrollProgress] = useState(0)
 
   const items = useMemo(() => navItems.map((i) => ({ ...i, href: `#${i.id}` })), [])
 
@@ -80,6 +81,20 @@ export function Navbar() {
     }
   }, [open])
 
+  useEffect(() => {
+    function onScroll() {
+      const doc = document.documentElement
+      const scrollTop = doc.scrollTop || document.body.scrollTop
+      const scrollHeight = doc.scrollHeight - doc.clientHeight
+      const progress = scrollHeight > 0 ? scrollTop / scrollHeight : 0
+      setScrollProgress(Math.max(0, Math.min(1, progress)))
+    }
+
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
   return (
     <>
       <a
@@ -88,7 +103,14 @@ export function Navbar() {
       >
         Skip to content
       </a>
-      <header className="sticky top-0 z-50 border-b border-white/10 bg-bg/75 backdrop-blur">
+      <header className="sticky top-0 z-50 border-b border-white/10 bg-bg/65 backdrop-blur supports-[backdrop-filter]:bg-bg/55">
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" aria-hidden="true" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-indigo-500/25 to-transparent" aria-hidden="true" />
+        <div
+          className="pointer-events-none absolute left-0 top-0 h-0.5 bg-gradient-to-r from-indigo-400 via-fuchsia-400 to-cyan-300"
+          style={{ width: `${Math.round(scrollProgress * 100)}%` }}
+          aria-hidden="true"
+        />
         <Container className="flex h-16 items-center justify-between">
           <a href="#top" className="font-semibold tracking-tight">
             {profile.name}
@@ -132,7 +154,7 @@ export function Navbar() {
 
           <button
             type="button"
-            className="inline-flex items-center justify-center rounded-xl border border-white/10 bg-white/5 p-2 hover:bg-white/10 md:hidden"
+            className="inline-flex items-center justify-center rounded-xl border border-white/12 bg-white/[0.06] p-2 transition hover:border-white/25 hover:bg-white/[0.10] md:hidden"
             aria-label={open ? 'Close menu' : 'Open menu'}
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
