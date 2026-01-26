@@ -7,8 +7,8 @@ function ActionLink({ href, children }: { href: string; children: string }) {
   return (
     <a
       className={cn(
-        'inline-flex items-center gap-2 rounded-xl border border-white/12 bg-white/[0.04] px-3 py-2 text-sm font-semibold text-slate-100/90 transition',
-        'hover:border-white/20 hover:bg-white/[0.07] hover:text-white',
+        'inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.04] px-3 py-2 text-sm font-semibold text-slate-100/90 transition will-change-transform shadow-sm shadow-black/15',
+        'hover:-translate-y-0.5 hover:border-white/20 hover:bg-white/[0.07] hover:text-white hover:shadow-black/25',
       )}
       href={href}
       target="_blank"

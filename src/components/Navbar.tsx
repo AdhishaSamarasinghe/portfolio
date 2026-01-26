@@ -103,7 +103,7 @@ export function Navbar() {
       >
         Skip to content
       </a>
-      <header className="sticky top-0 z-50 border-b border-white/10 bg-bg/65 backdrop-blur supports-[backdrop-filter]:bg-bg/50">
+      <header className="sticky top-0 z-50 border-b border-white/10 bg-bg/70 backdrop-blur-lg supports-[backdrop-filter]:bg-bg/55 shadow-[0_10px_30px_rgba(0,0,0,0.25)]">
         <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/18 to-transparent" aria-hidden="true" />
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-brand-indigo/25 to-transparent" aria-hidden="true" />
         <div
@@ -132,13 +132,20 @@ export function Navbar() {
                 key={item.id}
                 href={item.href}
                 className={cn(
-                  'text-base font-semibold transition',
+                  'group relative inline-flex items-center gap-2 rounded-xl px-3 py-2 text-base font-semibold transition-colors',
                   activeId === item.id
-                    ? 'text-white'
-                    : 'text-slate-100/70 hover:text-white',
+                    ? 'bg-white/10 text-white shadow-sm shadow-black/25'
+                    : 'text-slate-100/75 hover:text-white hover:bg-white/8',
                 )}
               >
                 {item.label}
+                <span
+                  className={cn(
+                    'pointer-events-none absolute inset-x-3 -bottom-1 h-0.5 rounded-full bg-gradient-to-r from-teal-300/0 via-teal-200/70 to-teal-300/0 transition-opacity',
+                    activeId === item.id ? 'opacity-100' : 'opacity-0 group-hover:opacity-50',
+                  )}
+                  aria-hidden="true"
+                />
               </a>
             ))}
           </nav>
@@ -201,7 +208,12 @@ export function Navbar() {
                   <a
                     key={item.id}
                     href={item.href}
-                    className="rounded-xl px-3 py-3 text-sm font-semibold text-slate-100/90 hover:bg-white/[0.08]"
+                    className={cn(
+                      'rounded-xl px-3 py-3 text-sm font-semibold transition-colors',
+                      activeId === item.id
+                        ? 'bg-white/[0.12] text-white'
+                        : 'text-slate-100/90 hover:bg-white/[0.08]',
+                    )}
                     onClick={() => setOpen(false)}
                   >
                     {item.label}
