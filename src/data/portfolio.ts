@@ -29,12 +29,12 @@ export const navItems = [
 ] as const
 
 export const profile = {
-  name: 'Your Name',
+  name: 'Adhisha Samarasinghe',
   headline: 'Computer Science student building reliable, user-focused software.',
-  location: 'City, Country',
+  location: 'Malabe, Sri Lanka',
   availability: 'Summer 2026 internships',
   education: {
-    school: 'Your University',
+    school: 'university of westminster',
     degree: 'B.S. Computer Science',
     graduation: 'Expected 2027',
     highlights: ['Data Structures & Algorithms', 'Operating Systems', 'Databases'],
@@ -42,8 +42,8 @@ export const profile = {
   summary:
     'I’m a CS student interested in full-stack development, systems, and practical ML. I enjoy taking projects from idea → clean UI → production-ready code.',
   social: [
-    { label: 'GitHub', href: 'https://github.com/your-handle' },
-    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/your-handle/' },
+    { label: 'GitHub', href: 'https://github.com/AdhishaSamarasinghe' },
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/adhisha-samarasinghe-161991352/' },
     // Put your actual resume file at public/resume.pdf or replace with a hosted link.
     { label: 'Resume', href: '/resume.pdf' },
   ] satisfies SocialLink[],
