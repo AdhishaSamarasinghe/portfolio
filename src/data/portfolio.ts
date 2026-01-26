@@ -33,6 +33,7 @@ export const profile = {
   headline: 'Computer Science student building reliable, user-focused software.',
   location: 'Malabe, Sri Lanka',
   availability: 'Summer 2026 internships',
+  photo: '/profile.jpg',
   education: {
     school: 'university of westminster',
     degree: 'B.S. Computer Science',

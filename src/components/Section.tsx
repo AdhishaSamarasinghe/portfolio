@@ -13,21 +13,17 @@ type SectionProps = PropsWithChildren<{
 
 export function Section({ id, title, subtitle, className, children }: SectionProps) {
   return (
-    <section id={id} className={cn('scroll-mt-24 py-16 sm:py-20', className)}>
+    <section id={id} className={cn('scroll-mt-28 py-20 sm:py-28', className)}>
       <Container>
-        <Reveal className="max-w-2xl">
-          <p className="inline-flex items-center gap-2 text-sm font-semibold tracking-[0.18em] text-transparent bg-clip-text bg-gradient-to-r from-indigo-200 via-indigo-300 to-cyan-200">
-            <span className="h-px w-8 bg-gradient-to-r from-indigo-400/70 to-cyan-300/70" aria-hidden="true" />
-            {title}
-          </p>
-          {subtitle ? (
-            <h2 className="mt-3 text-2xl font-semibold tracking-tight sm:text-3xl">
-              {subtitle}
-            </h2>
-          ) : null}
+        <Reveal className="max-w-3xl">
+          <p className="kicker">{title}</p>
+          <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-100 sm:text-4xl">
+            {subtitle ?? title}
+          </h2>
+          <p className="mt-4 h-px w-full bg-gradient-to-r from-white/0 via-white/12 to-white/0" aria-hidden="true" />
         </Reveal>
 
-        <Reveal className="mt-8">{children}</Reveal>
+        <Reveal className="mt-12">{children}</Reveal>
       </Container>
     </section>
   )

@@ -103,17 +103,27 @@ export function Navbar() {
       >
         Skip to content
       </a>
-      <header className="sticky top-0 z-50 border-b border-white/10 bg-bg/65 backdrop-blur supports-[backdrop-filter]:bg-bg/55">
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" aria-hidden="true" />
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-indigo-500/25 to-transparent" aria-hidden="true" />
+      <header className="sticky top-0 z-50 border-b border-white/10 bg-bg/65 backdrop-blur supports-[backdrop-filter]:bg-bg/50">
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/18 to-transparent" aria-hidden="true" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-brand-indigo/25 to-transparent" aria-hidden="true" />
         <div
-          className="pointer-events-none absolute left-0 top-0 h-0.5 bg-gradient-to-r from-indigo-400 via-fuchsia-400 to-cyan-300"
+          className="pointer-events-none absolute left-0 top-0 h-0.5 bg-gradient-to-r from-brand-indigo via-teal-400 to-brand-cyan"
           style={{ width: `${Math.round(scrollProgress * 100)}%` }}
           aria-hidden="true"
         />
-        <Container className="flex h-16 items-center justify-between">
-          <a href="#top" className="font-semibold tracking-tight">
-            {profile.name}
+        <Container className="flex h-20 items-center justify-between">
+          <a href="#top" className="group inline-flex items-center gap-3 font-semibold tracking-tight">
+            <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/[0.04] text-base text-white/90 shadow-sm shadow-black/30">
+              {profile.name
+                .split(' ')
+                .slice(0, 2)
+                .map((p) => p[0])
+                .join('')}
+            </span>
+            <span className="hidden sm:inline-block">
+              {profile.name}
+            </span>
+            <span className="sr-only">Go to top</span>
           </a>
 
           <nav className="hidden items-center gap-8 md:flex" aria-label="Primary">
@@ -122,8 +132,10 @@ export function Navbar() {
                 key={item.id}
                 href={item.href}
                 className={cn(
-                  'text-sm font-semibold transition',
-                  activeId === item.id ? 'text-white' : 'text-slate-100/70 hover:text-white',
+                  'text-base font-semibold transition',
+                  activeId === item.id
+                    ? 'text-white'
+                    : 'text-slate-100/70 hover:text-white',
                 )}
               >
                 {item.label}
@@ -154,7 +166,7 @@ export function Navbar() {
 
           <button
             type="button"
-            className="inline-flex items-center justify-center rounded-xl border border-white/12 bg-white/[0.06] p-2 transition hover:border-white/25 hover:bg-white/[0.10] md:hidden"
+            className="inline-flex items-center justify-center rounded-xl border border-white/12 bg-white/[0.04] p-2 transition hover:border-white/22 hover:bg-white/[0.08] md:hidden"
             aria-label={open ? 'Close menu' : 'Open menu'}
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
@@ -189,7 +201,7 @@ export function Navbar() {
                   <a
                     key={item.id}
                     href={item.href}
-                    className="rounded-xl px-3 py-3 text-sm font-semibold text-slate-100/90 hover:bg-white/10"
+                    className="rounded-xl px-3 py-3 text-sm font-semibold text-slate-100/90 hover:bg-white/[0.08]"
                     onClick={() => setOpen(false)}
                   >
                     {item.label}
