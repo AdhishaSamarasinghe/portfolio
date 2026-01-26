@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 
+import { CustomCursor } from './components/CustomCursor'
 import { Navbar } from './components/Navbar'
 import { profile } from './data/portfolio'
 import { About } from './sections/About'
@@ -74,6 +75,7 @@ export default function App() {
 
   return (
     <div className="min-h-dvh">
+      <CustomCursor />
       <Navbar />
       <main id="main">
         <Hero />

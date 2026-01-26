@@ -30,20 +30,20 @@ export function Hero() {
               <Badge>{profile.availability}</Badge>
             </div>
 
-            <h1 className="mt-7 text-5xl font-semibold tracking-tight sm:text-6xl lg:text-7xl">
+            <h1 className="mt-7 text-4xl font-semibold tracking-tight sm:text-5xl lg:text-7xl">
               <span className="block text-slate-100/90">I build</span>
               <span className="block bg-gradient-to-r from-white via-teal-100 to-sky-100 bg-clip-text text-transparent">
                 reliable software
               </span>
-              <span className="mt-4 block text-2xl font-semibold text-slate-100/85 sm:text-3xl">
+              <span className="mt-4 block text-xl font-semibold text-slate-100/85 sm:text-3xl">
                 {profile.name}
               </span>
             </h1>
 
-            <p className="mt-5 max-w-2xl text-lg leading-relaxed text-slate-200/80 sm:text-xl">
+            <p className="mt-5 max-w-2xl text-base leading-relaxed text-slate-200/80 sm:text-xl">
               {profile.headline}
             </p>
-            <p className="mt-4 max-w-2xl text-base leading-relaxed text-slate-200/70 sm:text-lg">
+            <p className="mt-4 max-w-2xl text-sm leading-relaxed text-slate-200/70 sm:text-lg">
               {profile.summary}
             </p>
 
@@ -81,7 +81,9 @@ export function Hero() {
 
           <div className="grid gap-5 sm:grid-cols-2 motion-safe:animate-fade-up motion-safe:[animation-delay:120ms]">
             <div className="card p-3 sm:col-span-2">
-              <div className="relative aspect-[9/16] w-full min-h-[520px] max-h-[760px] overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] shadow-2xl shadow-black/40">
+              <div
+                className="relative aspect-[9/16] w-full min-h-[420px] sm:min-h-[520px] md:min-h-[560px] max-h-[760px] overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] shadow-2xl shadow-black/40"
+              >
                 <div className="absolute inset-0 bg-gradient-to-br from-brand-indigo/25 via-brand-cyan/10 to-brand-amber/18" aria-hidden="true" />
                 {profile.photo ? (
                   <img
@@ -93,7 +95,10 @@ export function Hero() {
                     onLoad={() => setHasImage(true)}
                   />
                 ) : null}
-                <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-transparent to-black/35" aria-hidden="true" />
+                <div
+                  className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/18 via-transparent to-black/38"
+                  aria-hidden="true"
+                />
                 {!hasImage || !profile.photo ? (
                   <div className="relative flex h-full w-full items-center justify-center text-5xl font-semibold text-white/85 sm:text-6xl">
                     {initials}

@@ -13,7 +13,7 @@ type SectionProps = PropsWithChildren<{
 
 export function Section({ id, title, subtitle, className, children }: SectionProps) {
   return (
-    <section id={id} className={cn('scroll-mt-28 py-20 sm:py-28', className)}>
+    <section id={id} className={cn('scroll-mt-24 py-16 sm:py-28', className)}>
       <Container>
         <Reveal className="max-w-3xl">
           <p className="kicker">{title}</p>
