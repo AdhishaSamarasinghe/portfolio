@@ -124,10 +124,19 @@ export function Hero() {
 
           <div className="lg:col-span-5 motion-safe:animate-fade-up motion-safe:[animation-delay:120ms]">
             <div className="p-3">
-              <div className="relative rounded-[30px] p-[2px] bg-white/[0.08]">
+              <div className="relative rounded-[36px] p-[2px] shadow-[0_18px_70px_rgba(0,0,0,0.65)]">
+                <div className="pointer-events-none absolute inset-0 rounded-[36px] bg-[linear-gradient(135deg,rgba(255,255,255,0.35),rgba(255,255,255,0.08),rgba(56,189,248,0.22))]" />
+                <div className="pointer-events-none absolute -inset-[6px] rounded-[42px] bg-[radial-gradient(circle_at_12%_18%,rgba(255,255,255,0.35),transparent_45%),radial-gradient(circle_at_88%_82%,rgba(20,184,166,0.28),transparent_55%)] blur-[6px]" />
+                <div className="pointer-events-none absolute inset-0 rounded-[36px] ring-1 ring-white/[0.12]" aria-hidden="true" />
+                <div className="pointer-events-none absolute inset-[6px] rounded-[30px] ring-1 ring-white/[0.08]" aria-hidden="true" />
+                <div className="pointer-events-none absolute inset-x-3 top-3 h-px rounded-full bg-gradient-to-r from-transparent via-white/[0.4] to-transparent opacity-70" aria-hidden="true" />
+                <div className="pointer-events-none absolute inset-x-6 bottom-3 h-px rounded-full bg-gradient-to-r from-transparent via-brand-cyan/[0.35] to-transparent opacity-60" aria-hidden="true" />
                 <div
-                  className="relative aspect-[9/16] w-full min-h-[420px] sm:min-h-[520px] md:min-h-[560px] max-h-[760px] overflow-hidden rounded-[26px] bg-bg"
+                  className="relative aspect-[9/16] w-full min-h-[420px] sm:min-h-[520px] md:min-h-[560px] max-h-[760px] overflow-hidden rounded-[28px]"
                 >
+                  <div className="pointer-events-none absolute inset-0 rounded-[28px] ring-1 ring-white/[0.2]" aria-hidden="true" />
+                  <div className="pointer-events-none absolute left-4 top-4 h-4 w-4 rounded-full bg-white/[0.45] blur-[1px]" aria-hidden="true" />
+                  <div className="pointer-events-none absolute bottom-4 right-4 h-3 w-3 rounded-full bg-brand-cyan/[0.45] blur-[1px]" aria-hidden="true" />
                     {profile.photo ? (
                       <img
                         src={profile.photo}
