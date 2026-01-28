@@ -16,11 +16,10 @@
     text-rendering: geometricPrecision;
     font-size: 17px;
     line-height: 1.65;
+    background-color: rgb(5, 7, 18);
     background-image:
-      radial-gradient(1000px 700px at 10% -10%, rgba(20, 184, 166, 0.28), transparent 60%),
-      radial-gradient(900px 600px at 110% 10%, rgba(56, 189, 248, 0.20), transparent 55%),
-      radial-gradient(900px 700px at 40% 120%, rgba(249, 115, 22, 0.12), transparent 58%),
-      linear-gradient(to bottom, rgba(255, 255, 255, 0.04), transparent 45%);
+      conic-gradient(from 210deg at 50% 32%, rgba(255, 255, 255, 0.04), transparent 55%),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent 48%);
     background-attachment: fixed;
   }
 
@@ -30,11 +29,12 @@
     inset: 0;
     pointer-events: none;
     background-image:
-      linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
-    background-size: 72px 72px;
-    opacity: 0.12;
-    mask-image: radial-gradient(70% 60% at 50% 22%, black, transparent);
+      linear-gradient(to right, rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+      linear-gradient(120deg, rgba(45, 212, 191, 0.12), transparent 35%, rgba(236, 72, 153, 0.12));
+    background-size: 82px 82px, 82px 82px, 100% 100%;
+    opacity: 0.16;
+    mask-image: radial-gradient(78% 70% at 50% 22%, black, transparent);
   }
 
   body::after {
@@ -43,9 +43,10 @@
     inset: 0;
     pointer-events: none;
     background:
-      radial-gradient(80% 60% at 50% 12%, transparent 45%, rgba(0, 0, 0, 0.52)),
-      radial-gradient(45% 35% at 30% 30%, rgba(255, 255, 255, 0.06), transparent 65%);
-    opacity: 0.75;
+      conic-gradient(from 200deg at 50% 38%, rgba(125, 211, 252, 0.28), rgba(167, 139, 250, 0.26), rgba(244, 114, 182, 0.26), rgba(52, 211, 153, 0.24), rgba(125, 211, 252, 0.28));
+    opacity: 0.92;
+    mix-blend-mode: screen;
+    animation: prism-web 22s ease-in-out infinite alternate;
   }
 
   a {
@@ -81,11 +82,11 @@
 
 @layer components {
   .surface {
-    @apply rounded-2xl border border-white/10 bg-white/[0.06] shadow-sm shadow-black/25 backdrop-blur;
+    @apply rounded-2xl border border-white/18 bg-white/[0.12] shadow-lg shadow-black/35 backdrop-blur;
   }
 
   .surface-hover {
-    @apply transition will-change-transform hover:-translate-y-0.5 hover:border-white/20 hover:bg-white/[0.09] hover:shadow-lg hover:shadow-black/30;
+    @apply transition will-change-transform hover:-translate-y-0.5 hover:border-white/28 hover:bg-white/[0.16] hover:shadow-xl hover:shadow-black/40;
   }
 
   .muted {
@@ -206,5 +207,20 @@
   .cursor-dot,
   .cursor-ring {
     display: none;
+  }
+}
+
+@keyframes prism-web {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+    filter: blur(2px);
+  }
+  45% {
+    transform: translate3d(-3%, 2%, 0) scale(1.04);
+    filter: blur(4px);
+  }
+  100% {
+    transform: translate3d(4%, -2%, 0) scale(1.08);
+    filter: blur(6px);
   }
 }
