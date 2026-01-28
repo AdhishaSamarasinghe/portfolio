@@ -54,7 +54,7 @@ export function Contact() {
               <button
                 type="button"
                 onClick={copyEmail}
-                className="rounded-xl border border-white/12 bg-white/[0.04] px-3 py-2 text-xs font-semibold text-slate-100/80 transition hover:border-white/20 hover:bg-white/[0.07] hover:text-white"
+                className="rounded-xl border border-white/[0.12] bg-white/[0.04] px-3 py-2 text-xs font-semibold text-slate-100/[0.8] transition hover:border-white/20 hover:bg-white/[0.07] hover:text-white"
                 aria-label="Copy email address"
               >
                 {copied ? 'Copied' : 'Copy'}

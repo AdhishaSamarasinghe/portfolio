@@ -16,12 +16,6 @@ export function Hero() {
 
   return (
     <section id="top" className="relative overflow-hidden pb-14 pt-18 sm:pb-20 sm:pt-28">
-      <div className="pointer-events-none absolute inset-0" aria-hidden="true">
-        <div className="absolute -left-28 -top-28 h-80 w-80 rounded-full bg-brand-indigo/18 blur-3xl motion-safe:animate-float" />
-        <div className="absolute -bottom-24 -right-24 h-80 w-80 rounded-full bg-brand-cyan/10 blur-3xl motion-safe:animate-float motion-safe:[animation-delay:800ms]" />
-        <div className="absolute left-1/2 top-10 h-72 w-72 -translate-x-1/2 rounded-full bg-brand-amber/10 blur-3xl motion-safe:animate-float motion-safe:[animation-delay:1400ms]" />
-      </div>
-
       <Container>
         <div className="grid items-start gap-10 lg:grid-cols-12 lg:gap-12 xl:gap-14">
           <div className="lg:col-span-7 motion-safe:animate-fade-up">
@@ -35,7 +29,7 @@ export function Hero() {
               <span className="block bg-gradient-to-r from-white via-teal-100 to-sky-100 bg-clip-text text-transparent">
                 reliable software
               </span>
-              <span className="mt-4 block text-xl font-semibold text-slate-100/85 sm:text-3xl">
+              <span className="mt-4 block text-xl font-semibold text-slate-100/[0.85] sm:text-3xl">
                 {profile.name}
               </span>
             </h1>
@@ -108,7 +102,7 @@ export function Hero() {
 
               <div className="card relative overflow-hidden p-6">
                 <div className="pointer-events-none absolute inset-0 opacity-60" aria-hidden="true">
-                  <div className="absolute -left-12 top-0 h-40 w-40 rounded-full bg-brand-indigo/14 blur-2xl" />
+                  <div className="absolute -left-12 top-0 h-40 w-40 rounded-full bg-brand-indigo/[0.14] blur-2xl" />
                   <div className="absolute -right-16 bottom-0 h-44 w-44 rounded-full bg-brand-cyan/10 blur-2xl" />
                 </div>
                 <div className="relative">
@@ -129,34 +123,31 @@ export function Hero() {
           </div>
 
           <div className="lg:col-span-5 motion-safe:animate-fade-up motion-safe:[animation-delay:120ms]">
-            <div className="card p-3">
-              <div
-                className="relative aspect-[9/16] w-full min-h-[420px] sm:min-h-[520px] md:min-h-[560px] max-h-[760px] overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] shadow-2xl shadow-black/40"
-              >
-                <div className="absolute inset-0 bg-gradient-to-br from-brand-indigo/25 via-brand-cyan/10 to-brand-amber/18" aria-hidden="true" />
-                {profile.photo ? (
-                  <img
-                    src={profile.photo}
-                    alt={profile.name}
-                    className="absolute inset-0 h-full w-full object-cover object-center"
-                    loading="lazy"
-                    onError={() => setHasImage(false)}
-                    onLoad={() => setHasImage(true)}
-                  />
-                ) : null}
+            <div className="p-3">
+              <div className="relative rounded-[30px] p-[2px] bg-white/[0.08]">
                 <div
-                  className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/18 via-transparent to-black/38"
-                  aria-hidden="true"
-                />
-                {!hasImage || !profile.photo ? (
-                  <div className="relative flex h-full w-full items-center justify-center text-5xl font-semibold text-white/85 sm:text-6xl">
-                    {initials}
-                  </div>
-                ) : null}
+                  className="relative aspect-[9/16] w-full min-h-[420px] sm:min-h-[520px] md:min-h-[560px] max-h-[760px] overflow-hidden rounded-[26px] bg-bg"
+                >
+                    {profile.photo ? (
+                      <img
+                        src={profile.photo}
+                        alt={profile.name}
+                        className="absolute inset-0 h-full w-full object-cover object-center"
+                        loading="lazy"
+                        onError={() => setHasImage(false)}
+                        onLoad={() => setHasImage(true)}
+                      />
+                    ) : null}
+                    {!hasImage || !profile.photo ? (
+                      <div className="relative flex h-full w-full items-center justify-center text-5xl font-semibold text-white/[0.85] sm:text-6xl">
+                        {initials}
+                      </div>
+                    ) : null}
+                </div>
               </div>
               <div className="mt-3 flex items-center justify-between text-sm text-slate-200/75 sm:text-base">
                 <span className="font-semibold text-white">{profile.name}</span>
-                <span className="rounded-full border border-white/12 bg-white/8 px-3.5 py-1 text-xs font-semibold text-slate-100/85 sm:text-sm">
+                <span className="rounded-full px-3.5 py-1 text-xs font-semibold text-slate-100/[0.85] sm:text-sm">
                   {profile.location}
                 </span>
               </div>

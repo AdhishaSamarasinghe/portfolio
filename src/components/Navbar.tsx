@@ -103,8 +103,8 @@ export function Navbar() {
       >
         Skip to content
       </a>
-      <header className="sticky top-0 z-50 border-b border-white/10 bg-bg/70 backdrop-blur-lg supports-[backdrop-filter]:bg-bg/55 shadow-[0_10px_30px_rgba(0,0,0,0.25)]">
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/18 to-transparent" aria-hidden="true" />
+      <header className="sticky top-0 z-50 border-b border-white/6 bg-bg/[0.98] backdrop-blur-lg supports-[backdrop-filter]:bg-bg/[0.94] shadow-[0_12px_34px_rgba(0,0,0,0.55)]">
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/[0.08] to-transparent" aria-hidden="true" />
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-brand-indigo/25 to-transparent" aria-hidden="true" />
         <div
           className="pointer-events-none absolute left-0 top-0 h-0.5 bg-gradient-to-r from-brand-indigo via-teal-400 to-brand-cyan"
@@ -135,7 +135,7 @@ export function Navbar() {
                   'group relative inline-flex items-center gap-2 rounded-xl px-3 py-2 text-base font-semibold transition-colors',
                   activeId === item.id
                     ? 'bg-white/10 text-white shadow-sm shadow-black/25'
-                    : 'text-slate-100/75 hover:text-white hover:bg-white/8',
+                    : 'text-slate-100/75 hover:text-white hover:bg-white/[0.08]',
                 )}
               >
                 {item.label}
@@ -173,7 +173,7 @@ export function Navbar() {
 
           <button
             type="button"
-            className="inline-flex items-center justify-center rounded-xl border border-white/12 bg-white/[0.04] p-2 transition hover:border-white/22 hover:bg-white/[0.08] md:hidden"
+            className="inline-flex items-center justify-center rounded-xl border border-white/[0.12] bg-white/[0.04] p-2 transition hover:border-white/[0.22] hover:bg-white/[0.08] md:hidden"
             aria-label={open ? 'Close menu' : 'Open menu'}
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}

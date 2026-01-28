@@ -19,7 +19,7 @@ const variants: Record<Variant, string> = {
   secondary:
     'border border-white/20 bg-white/[0.05] text-white hover:bg-white/[0.08] hover:border-white/25 shadow-sm shadow-black/25',
   ghost:
-    'bg-transparent text-white/85 hover:bg-white/[0.08] hover:text-white',
+    'bg-transparent text-white/[0.85] hover:bg-white/[0.08] hover:text-white',
 }
 
 export function Button({ className, variant = 'primary', ...props }: ButtonProps) {

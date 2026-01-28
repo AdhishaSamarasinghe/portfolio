@@ -20,7 +20,7 @@ export function Section({ id, title, subtitle, className, children }: SectionPro
           <h2 className="mt-4 text-3xl font-semibold leading-[1.08] tracking-tight text-slate-50 sm:text-4xl">
             {subtitle ?? title}
           </h2>
-          <p className="mt-4 h-px w-full bg-gradient-to-r from-white/0 via-white/12 to-white/0" aria-hidden="true" />
+          <p className="mt-4 h-px w-full bg-gradient-to-r from-white/0 via-white/[0.12] to-white/0" aria-hidden="true" />
         </Reveal>
 
         <Reveal className="mt-12">{children}</Reveal>

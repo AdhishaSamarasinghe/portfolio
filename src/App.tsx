@@ -1,4 +1,5 @@
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
+import Lenis from 'lenis'
 
 import { CustomCursor } from './components/CustomCursor'
 import { Navbar } from './components/Navbar'
@@ -11,6 +12,8 @@ import { Projects } from './sections/Projects'
 import { Skills } from './sections/Skills'
 
 export default function App() {
+  const lenisRef = useRef<Lenis | null>(null)
+
   useEffect(() => {
     document.title = `${profile.name} | CS Internship Portfolio`
 
@@ -26,6 +29,36 @@ export default function App() {
       return window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ?? false
     }
 
+    if (!prefersReducedMotion()) {
+      const lenis = new Lenis({
+        duration: 0.65,
+        easing: (t) => 1 - Math.pow(1 - t, 1.8),
+        smoothWheel: true,
+      })
+      lenisRef.current = lenis
+
+      let raf = 0
+      const loop = (time: number) => {
+        lenis.raf(time)
+        raf = requestAnimationFrame(loop)
+      }
+      raf = requestAnimationFrame(loop)
+
+      return () => {
+        cancelAnimationFrame(raf)
+        lenis.destroy()
+        lenisRef.current = null
+      }
+    }
+
+    return
+  }, [])
+
+  useEffect(() => {
+    function prefersReducedMotion() {
+      return window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ?? false
+    }
+
     function scrollToHash(hash: string) {
       const id = hash.replace(/^#/, '')
       if (!id) return
@@ -33,8 +66,14 @@ export default function App() {
       const target = document.getElementById(id)
       if (!target) return
 
+      const lenis = lenisRef.current
+      if (lenis && !prefersReducedMotion()) {
+        lenis.scrollTo(target, { offset: -96 })
+        return
+      }
+
       target.scrollIntoView({
-        behavior: prefersReducedMotion() ? 'auto' : 'smooth',
+        behavior: 'auto',
         block: 'start',
       })
     }

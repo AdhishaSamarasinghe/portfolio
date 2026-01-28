@@ -58,15 +58,15 @@ export function About() {
             <h3 className="text-base font-semibold">Right now</h3>
             <dl className="mt-4 space-y-3 text-base">
               <div className="flex items-center justify-between gap-3">
-                <dt className="text-slate-200/65">Learning</dt>
+                <dt className="text-slate-200/[0.65]">Learning</dt>
                 <dd className="text-slate-100/90">Systems + practical ML</dd>
               </div>
               <div className="flex items-center justify-between gap-3">
-                <dt className="text-slate-200/65">Building</dt>
+                <dt className="text-slate-200/[0.65]">Building</dt>
                 <dd className="text-slate-100/90">Portfolio-grade projects</dd>
               </div>
               <div className="flex items-center justify-between gap-3">
-                <dt className="text-slate-200/65">Looking for</dt>
+                <dt className="text-slate-200/[0.65]">Looking for</dt>
                 <dd className="text-slate-100/90">Internship opportunities</dd>
               </div>
             </dl>

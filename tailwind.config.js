@@ -5,9 +5,9 @@ export default {
     extend: {
       colors: {
         bg: {
-          DEFAULT: '#0C1424',
-          2: '#111B2E',
-          3: '#16243A',
+          DEFAULT: '#050A14',
+          2: '#070E1D',
+          3: '#0B1426',
         },
         brand: {
           indigo: '#14B8A6',
