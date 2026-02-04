@@ -7,7 +7,7 @@ function ActionLink({ href, children }: { href: string; children: string }) {
   return (
     <a
       className={cn(
-        'inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.04] px-3 py-2 text-sm font-semibold text-slate-100/90 transition will-change-transform shadow-sm shadow-black/[0.15]',
+        'inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.04] px-3 py-2 text-sm font-semibold text-slate-100/90 transition will-change-transform shadow-sm shadow-black/[0.15] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-300/60 focus-visible:ring-offset-2 focus-visible:ring-offset-bg',
         'hover:-translate-y-0.5 hover:border-white/20 hover:bg-white/[0.07] hover:text-white hover:shadow-black/25',
       )}
       href={href}
@@ -22,7 +22,7 @@ function ActionLink({ href, children }: { href: string; children: string }) {
 
 export function ProjectCard({ project }: { project: Project }) {
   return (
-    <article className="card flex h-full flex-col p-7">
+    <article className="card group flex h-full flex-col p-7">
       <div className="flex flex-wrap items-start justify-between gap-5">
         <div className="flex-1 min-w-[220px]">
           <h3 className="text-xl font-semibold tracking-tight text-white">{project.title}</h3>

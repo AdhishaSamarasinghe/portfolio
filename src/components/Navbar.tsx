@@ -131,6 +131,7 @@ export function Navbar() {
               <a
                 key={item.id}
                 href={item.href}
+                aria-current={activeId === item.id ? 'page' : undefined}
                 className={cn(
                   'group relative inline-flex items-center gap-2 rounded-xl px-3 py-2 text-base font-semibold transition-colors',
                   activeId === item.id
@@ -208,6 +209,7 @@ export function Navbar() {
                   <a
                     key={item.id}
                     href={item.href}
+                    aria-current={activeId === item.id ? 'page' : undefined}
                     className={cn(
                       'rounded-xl px-3 py-3 text-sm font-semibold transition-colors',
                       activeId === item.id

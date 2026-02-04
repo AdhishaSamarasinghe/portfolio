@@ -11,7 +11,7 @@ type ButtonProps = PropsWithChildren<
 >
 
 const base =
-  'inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm sm:px-5 sm:py-3 sm:text-base font-semibold transition will-change-transform hover:-translate-y-0.5 active:translate-y-px disabled:pointer-events-none disabled:opacity-50 shadow-sm shadow-black/20'
+  'inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm sm:px-5 sm:py-3 sm:text-base font-semibold transition will-change-transform hover:-translate-y-0.5 active:translate-y-px disabled:pointer-events-none disabled:opacity-50 shadow-sm shadow-black/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-300/60 focus-visible:ring-offset-2 focus-visible:ring-offset-bg'
 
 const variants: Record<Variant, string> = {
   primary:
