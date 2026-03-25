@@ -125,35 +125,24 @@ export function Hero() {
 
           <Reveal className="lg:col-span-5">
             <div className="p-3">
-              <div className="relative rounded-[36px] p-[2px] shadow-[0_18px_70px_rgba(0,0,0,0.65)]">
-                <div className="pointer-events-none absolute inset-0 rounded-[36px] bg-[linear-gradient(135deg,rgba(255,255,255,0.35),rgba(255,255,255,0.08),rgba(56,189,248,0.22))]" />
-                <div className="pointer-events-none absolute -inset-[6px] rounded-[42px] bg-[radial-gradient(circle_at_12%_18%,rgba(255,255,255,0.35),transparent_45%),radial-gradient(circle_at_88%_82%,rgba(20,184,166,0.28),transparent_55%)] blur-[6px]" />
-                <div className="pointer-events-none absolute inset-0 rounded-[36px] ring-1 ring-white/[0.12]" aria-hidden="true" />
-                <div className="pointer-events-none absolute inset-[6px] rounded-[30px] ring-1 ring-white/[0.08]" aria-hidden="true" />
-                <div className="pointer-events-none absolute inset-x-3 top-3 h-px rounded-full bg-gradient-to-r from-transparent via-white/[0.4] to-transparent opacity-70" aria-hidden="true" />
-                <div className="pointer-events-none absolute inset-x-6 bottom-3 h-px rounded-full bg-gradient-to-r from-transparent via-brand-cyan/[0.35] to-transparent opacity-60" aria-hidden="true" />
-                <div
-                  className="relative aspect-[9/16] w-full min-h-[420px] sm:min-h-[520px] md:min-h-[560px] max-h-[760px] overflow-hidden rounded-[28px]"
-                >
-                  <div className="pointer-events-none absolute inset-0 rounded-[28px] ring-1 ring-white/[0.2]" aria-hidden="true" />
-                  <div className="pointer-events-none absolute left-4 top-4 h-4 w-4 rounded-full bg-white/[0.45] blur-[1px]" aria-hidden="true" />
-                  <div className="pointer-events-none absolute bottom-4 right-4 h-3 w-3 rounded-full bg-brand-cyan/[0.45] blur-[1px]" aria-hidden="true" />
-                    {profile.photo ? (
-                      <img
-                        src={profile.photo}
-                        alt={profile.name}
-                        className="absolute inset-0 h-full w-full object-cover object-center"
-                        loading="lazy"
-                        onError={() => setHasImage(false)}
-                        onLoad={() => setHasImage(true)}
-                      />
-                    ) : null}
-                    {!hasImage || !profile.photo ? (
-                      <div className="relative flex h-full w-full items-center justify-center text-5xl font-semibold text-white/[0.85] sm:text-6xl">
-                        {initials}
-                      </div>
-                    ) : null}
-                </div>
+              <div
+                className="relative aspect-[3/4] w-full max-w-[340px] sm:max-w-[380px] lg:max-w-full min-h-[420px] sm:min-h-[500px] lg:min-h-[560px] mx-auto overflow-hidden rounded-[28px] shadow-[0_12px_40px_rgba(0,0,0,0.55)] border border-white/[0.08] transition-all hover:scale-[1.02] hover:shadow-[0_16px_48px_rgba(0,0,0,0.65)] hover:border-white/[0.15]"
+              >
+                  {profile.photo ? (
+                    <img
+                      src={profile.photo}
+                      alt={profile.name}
+                      className="absolute inset-0 h-full w-full object-cover object-center"
+                      loading="lazy"
+                      onError={() => setHasImage(false)}
+                      onLoad={() => setHasImage(true)}
+                    />
+                  ) : null}
+                  {!hasImage || !profile.photo ? (
+                    <div className="relative flex h-full w-full items-center justify-center text-5xl font-semibold text-white/[0.85] sm:text-6xl">
+                      {initials}
+                    </div>
+                  ) : null}
               </div>
               <div className="mt-3 flex items-center justify-between text-sm text-slate-200/75 sm:text-base">
                 <span className="font-semibold text-white">{profile.name}</span>
