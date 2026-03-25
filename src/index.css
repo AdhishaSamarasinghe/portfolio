@@ -17,6 +17,7 @@
     @apply bg-bg text-slate-100 antialiased;
     scroll-behavior: initial;
     position: relative;
+    overflow-x: hidden;
     text-rendering: geometricPrecision;
     font-size: 17px;
     line-height: 1.65;
