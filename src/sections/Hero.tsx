@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { Badge } from '../components/Badge'
 import { ButtonLink } from '../components/Button'
 import { Container } from '../components/Container'
+import { Reveal } from '../components/Reveal'
 import { contact, ctas, profile } from '../data/portfolio'
 
 export function Hero() {
@@ -18,7 +19,7 @@ export function Hero() {
     <section id="top" className="relative overflow-hidden pb-14 pt-18 sm:pb-20 sm:pt-28">
       <Container>
         <div className="grid items-start gap-10 lg:grid-cols-12 lg:gap-12 xl:gap-14">
-          <div className="lg:col-span-7 motion-safe:animate-fade-up">
+          <Reveal className="lg:col-span-7">
             <div className="flex flex-wrap gap-2">
               <Badge>{profile.location}</Badge>
               <Badge>{profile.availability}</Badge>
@@ -120,9 +121,9 @@ export function Hero() {
                 </div>
               </div>
             </div>
-          </div>
+          </Reveal>
 
-          <div className="lg:col-span-5 motion-safe:animate-fade-up motion-safe:[animation-delay:120ms]">
+          <Reveal className="lg:col-span-5">
             <div className="p-3">
               <div className="relative rounded-[36px] p-[2px] shadow-[0_18px_70px_rgba(0,0,0,0.65)]">
                 <div className="pointer-events-none absolute inset-0 rounded-[36px] bg-[linear-gradient(135deg,rgba(255,255,255,0.35),rgba(255,255,255,0.08),rgba(56,189,248,0.22))]" />
@@ -161,7 +162,7 @@ export function Hero() {
                 </span>
               </div>
             </div>
-          </div>
+          </Reveal>
         </div>
       </Container>
     </section>

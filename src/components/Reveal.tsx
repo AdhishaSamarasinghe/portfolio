@@ -8,7 +8,7 @@ type RevealProps = PropsWithChildren<{
   once?: boolean
 }>
 
-export function Reveal({ className, once = true, children }: RevealProps) {
+export function Reveal({ className, once = false, children }: RevealProps) {
   const ref = useRef<HTMLDivElement | null>(null)
   const [visible, setVisible] = useState(false)
   const [reduceMotion, setReduceMotion] = useState(false)
@@ -59,26 +59,26 @@ export function Reveal({ className, once = true, children }: RevealProps) {
   }, [])
 
   return (
-    <div
-      ref={ref}
-      className={cn(
-        'motion-reduce:opacity-100 motion-reduce:transform-none',
-        'transition-[transform,opacity] duration-700 ease-out will-change-transform',
-        visible ? 'opacity-100' : 'opacity-0',
-        className,
-      )}
-      style={
-        reduceMotion
-          ? undefined
-          : {
-              transform: visible
-                ? 'translate3d(0, 0, 0)'
-                : `translate3d(${motion.current.offsetX}vw, ${motion.current.offsetY}px, 0)`,
-              transitionDelay: `${motion.current.delay}ms`,
-            }
-      }
-    >
-      {children}
+    <div ref={ref} className={className}>
+      <div
+        className={cn(
+          'motion-reduce:opacity-100 motion-reduce:transform-none',
+          'transition-[transform,opacity] duration-700 ease-out will-change-transform',
+          visible ? 'opacity-100' : 'opacity-0',
+        )}
+        style={
+          reduceMotion
+            ? undefined
+            : {
+                transform: visible
+                  ? 'translate3d(0, 0, 0)'
+                  : `translate3d(${motion.current.offsetX}vw, ${motion.current.offsetY}px, 0)`,
+                transitionDelay: `${motion.current.delay}ms`,
+              }
+        }
+      >
+        {children}
+      </div>
     </div>
   )
 }
