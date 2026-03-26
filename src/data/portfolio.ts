@@ -109,5 +109,5 @@ export const projects: Project[] = [
 ]
 
 export const contact = {
-  email: 'you@example.com',
+  email: 'adhishasamarasinghe0@gmail.com',
 } as const
