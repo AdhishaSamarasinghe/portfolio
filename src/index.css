@@ -23,8 +23,11 @@
     line-height: 1.65;
     background-color: rgb(2, 4, 10);
     background-image:
-      conic-gradient(from 210deg at 50% 32%, rgba(255, 255, 255, 0.004), transparent 55%),
-      linear-gradient(180deg, rgba(255, 255, 255, 0.004), transparent 48%);
+      radial-gradient(1200px 620px at 10% -10%, rgba(45, 212, 191, 0.12), transparent 58%),
+      radial-gradient(900px 540px at 90% 0%, rgba(244, 114, 182, 0.11), transparent 60%),
+      radial-gradient(1200px 700px at 50% 100%, rgba(56, 189, 248, 0.1), transparent 62%),
+      conic-gradient(from 220deg at 50% 32%, rgba(255, 255, 255, 0.01), transparent 58%),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.01), transparent 52%);
     background-attachment: fixed;
   }
 
@@ -35,12 +38,17 @@
     z-index: 0;
     pointer-events: none;
     background-image:
-      linear-gradient(to right, rgba(255, 255, 255, 0.045) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(255, 255, 255, 0.045) 1px, transparent 1px),
-      linear-gradient(120deg, rgba(45, 212, 191, 0.12), transparent 35%, rgba(236, 72, 153, 0.12));
-    background-size: 82px 82px, 82px 82px, 100% 100%;
-    opacity: 0.03;
-    mask-image: radial-gradient(78% 70% at 50% 22%, black, transparent);
+      radial-gradient(80% 50% at 50% 0%, rgba(255, 255, 255, 0.08), transparent 70%),
+      repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.022) 0 1px, transparent 1px 3px),
+      repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.017) 0 1px, transparent 1px 4px),
+      linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+      linear-gradient(115deg, rgba(45, 212, 191, 0.2), transparent 35%, rgba(236, 72, 153, 0.2));
+    background-size: 100% 100%, 2px 2px, 3px 3px, 78px 78px, 78px 78px, 100% 100%;
+    background-position: 0 0, 0 0, 0 0, 0 0, 0 0, 0 0;
+    opacity: 0.065;
+    mask-image: radial-gradient(82% 72% at 50% 20%, black, transparent);
+    animation: mesh-drift 36s ease-in-out infinite alternate, grain-flicker 900ms steps(2) infinite;
   }
 
   body::after {
@@ -50,10 +58,14 @@
     z-index: 0;
     pointer-events: none;
     background:
-      conic-gradient(from 200deg at 50% 38%, rgba(125, 211, 252, 0.28), rgba(167, 139, 250, 0.26), rgba(244, 114, 182, 0.26), rgba(52, 211, 153, 0.24), rgba(125, 211, 252, 0.28));
-    opacity: 0.32;
+      radial-gradient(420px 320px at 20% 22%, rgba(34, 211, 238, 0.34), transparent 72%),
+      radial-gradient(500px 360px at 82% 30%, rgba(244, 114, 182, 0.34), transparent 74%),
+      radial-gradient(520px 380px at 58% 74%, rgba(129, 140, 248, 0.3), transparent 75%),
+      conic-gradient(from 200deg at 50% 38%, rgba(125, 211, 252, 0.26), rgba(167, 139, 250, 0.24), rgba(244, 114, 182, 0.24), rgba(52, 211, 153, 0.22), rgba(125, 211, 252, 0.26));
+    opacity: 0.42;
     mix-blend-mode: screen;
-    animation: prism-web 22s ease-in-out infinite alternate;
+    filter: blur(2px) saturate(1.1);
+    animation: prism-web 26s ease-in-out infinite alternate;
   }
 
   #root {
@@ -239,14 +251,43 @@
 @keyframes prism-web {
   0% {
     transform: translate3d(0, 0, 0) scale(1);
-    filter: blur(2px);
+    filter: blur(2px) saturate(1.08);
   }
   45% {
-    transform: translate3d(-3%, 2%, 0) scale(1.04);
-    filter: blur(4px);
+    transform: translate3d(-4%, 3%, 0) scale(1.07);
+    filter: blur(5px) saturate(1.15);
   }
   100% {
-    transform: translate3d(4%, -2%, 0) scale(1.08);
-    filter: blur(6px);
+    transform: translate3d(5%, -3%, 0) scale(1.1);
+    filter: blur(7px) saturate(1.2);
+  }
+}
+
+@keyframes mesh-drift {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+    background-position: 0 0, 0 0, 0 0, 0 0, 0 0, 0 0;
+  }
+  100% {
+    transform: translate3d(0, -1.5%, 0) scale(1.02);
+    background-position: 0 0, 1px 2px, -2px 1px, 26px 18px, -20px 32px, 0 0;
+  }
+}
+
+@keyframes grain-flicker {
+  0% {
+    filter: contrast(1);
+  }
+  25% {
+    filter: contrast(1.04);
+  }
+  50% {
+    filter: contrast(0.98);
+  }
+  75% {
+    filter: contrast(1.03);
+  }
+  100% {
+    filter: contrast(1);
   }
 }

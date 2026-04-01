@@ -126,20 +126,25 @@ export function Hero() {
           <Reveal className="lg:col-span-5">
             <div className="p-3">
               <div
-                className="relative aspect-[3/4] w-full max-w-[340px] sm:max-w-[380px] lg:max-w-full min-h-[420px] sm:min-h-[500px] lg:min-h-[560px] mx-auto overflow-hidden rounded-[28px] shadow-[0_12px_40px_rgba(0,0,0,0.55)] border border-white/[0.08] transition-all hover:scale-[1.02] hover:shadow-[0_16px_48px_rgba(0,0,0,0.65)] hover:border-white/[0.15]"
+                className="group relative aspect-[3/4] w-full max-w-[340px] sm:max-w-[380px] lg:max-w-full min-h-[420px] sm:min-h-[500px] lg:min-h-[560px] mx-auto overflow-hidden rounded-[30px] border border-white/[0.16] bg-slate-950/60 p-[6px] shadow-[0_16px_46px_rgba(0,0,0,0.6)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_58px_rgba(0,0,0,0.72)]"
               >
+                  <div className="pointer-events-none absolute inset-0 rounded-[30px] border border-white/20" aria-hidden="true" />
+                  <div
+                    className="pointer-events-none absolute inset-[6px] rounded-[24px] bg-gradient-to-br from-cyan-300/20 via-transparent to-pink-300/18 opacity-70 transition-opacity duration-300 group-hover:opacity-95"
+                    aria-hidden="true"
+                  />
                   {profile.photo ? (
                     <img
                       src={profile.photo}
                       alt={profile.name}
-                      className="absolute inset-0 h-full w-full object-cover object-center"
+                      className="absolute inset-[6px] h-[calc(100%-12px)] w-[calc(100%-12px)] rounded-[24px] object-cover object-center"
                       loading="lazy"
                       onError={() => setHasImage(false)}
                       onLoad={() => setHasImage(true)}
                     />
                   ) : null}
                   {!hasImage || !profile.photo ? (
-                    <div className="relative flex h-full w-full items-center justify-center text-5xl font-semibold text-white/[0.85] sm:text-6xl">
+                    <div className="relative m-[6px] flex h-[calc(100%-12px)] w-[calc(100%-12px)] items-center justify-center rounded-[24px] border border-white/20 bg-slate-900/90 text-5xl font-semibold text-white/[0.85] sm:text-6xl">
                       {initials}
                     </div>
                   ) : null}
