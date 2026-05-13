@@ -39,7 +39,7 @@ export default function App() {
 
     if (!prefersReducedMotion()) {
       const lenis = new Lenis({
-        duration: 0.65,
+        duration: 0.52,
         easing: (t) => 1 - Math.pow(1 - t, 1.8),
         smoothWheel: true,
       })
