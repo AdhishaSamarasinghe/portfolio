@@ -25,7 +25,7 @@ export function Hero() {
               <Badge>{profile.availability}</Badge>
             </div>
 
-            <h1 className="mt-7 text-4xl font-semibold tracking-tight sm:text-5xl lg:text-7xl">
+            <h1 className="mt-7 text-[clamp(2.6rem,11vw,4rem)] font-semibold leading-[0.96] tracking-tight sm:text-5xl lg:text-7xl">
               <span className="block text-slate-100/90">I build</span>
               <span className="block bg-gradient-to-r from-white via-zinc-200 to-zinc-400 bg-clip-text text-transparent">
                 reliable software
@@ -126,7 +126,7 @@ export function Hero() {
           <Reveal className="lg:col-span-5">
             <div className="p-3">
               <div
-                className="group relative aspect-[3/4] w-full max-w-[340px] sm:max-w-[380px] lg:max-w-full min-h-[420px] sm:min-h-[500px] lg:min-h-[560px] mx-auto overflow-hidden rounded-[30px] border border-white/[0.14] bg-zinc-950/75 p-[6px] shadow-[0_16px_46px_rgba(0,0,0,0.6)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_58px_rgba(0,0,0,0.72)]"
+                className="group relative aspect-[3/4] w-full max-w-[340px] min-h-[340px] sm:max-w-[380px] sm:min-h-[500px] lg:max-w-full lg:min-h-[560px] mx-auto overflow-hidden rounded-[30px] border border-white/[0.14] bg-zinc-950/75 p-[6px] shadow-[0_16px_46px_rgba(0,0,0,0.6)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_58px_rgba(0,0,0,0.72)]"
               >
                   <div className="pointer-events-none absolute inset-0 rounded-[30px] border border-white/20" aria-hidden="true" />
                   <div
