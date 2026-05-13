@@ -50,8 +50,8 @@ export function Hero() {
               <ButtonLink
                 href={ctas.resumeHref}
                 variant="ghost"
-                target={ctas.resumeHref.startsWith('http') ? '_blank' : undefined}
-                rel={ctas.resumeHref.startsWith('http') ? 'noreferrer' : undefined}
+                target="_blank"
+                rel="noreferrer"
               >
                 Resume
               </ButtonLink>

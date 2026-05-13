@@ -99,7 +99,7 @@ export function Contact() {
               <h3 className="text-base font-semibold">Resume</h3>
               <p className="mt-2 text-base text-slate-200/70">One-page overview and links.</p>
               <div className="mt-4">
-                <ButtonLink href={ctas.resumeHref} variant="secondary">
+                <ButtonLink href={ctas.resumeHref} variant="secondary" target="_blank" rel="noreferrer">
                   Open resume
                 </ButtonLink>
               </div>

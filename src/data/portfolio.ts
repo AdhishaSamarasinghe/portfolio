@@ -47,14 +47,13 @@ export const profile = {
   social: [
     { label: 'GitHub', href: 'https://github.com/AdhishaSamarasinghe' },
     { label: 'LinkedIn', href: 'https://www.linkedin.com/in/adhisha-samarasinghe-161991352/' },
-    // Put your actual resume file at public/resume.pdf or replace with a hosted link.
-    { label: 'Resume', href: '/resume.pdf' },
+    { label: 'Resume', href: '/Adhisha-Samarasinghe-Resume.pdf' },
   ] satisfies SocialLink[],
 } as const
 
 export const ctas = {
   resumeLabel: 'Resume',
-  resumeHref: '/resume.pdf',
+  resumeHref: '/Adhisha-Samarasinghe-Resume.pdf',
   primaryEmailLabel: 'Email',
 } as const
 
@@ -66,48 +65,91 @@ export const skills = {
 
 export const projects: Project[] = [
   {
-    title: 'Internship Tracker',
+    title: 'WorkzUp – Job Marketplace Platform',
     description:
-      'A fast, searchable tracker for applications with tags, reminders, and analytics. Built to stay lightweight and keyboard-friendly.',
+      'A full-stack job marketplace platform connecting recruiters and job seekers with secure authentication, real-time communication, and payment integration.',
     highlights: [
-      'Designed a keyboard-first UI for fast data entry and review.',
-      'Implemented tag + search filtering for quick recruiter-ready tracking.',
-      'Added analytics view to summarize pipeline status over time.',
+      'Implemented secure authentication and role-based access control',
+      'Built job posting, application, and real-time messaging features',
+      'Integrated PayHere payment gateway for recruiter payments',
+      'Optimized API calls and database queries for better performance',
+      'Implemented form validation and efficient state management',
+      'Deployed frontend and backend using Vercel and Railway',
     ],
-    tech: ['React', 'TypeScript', 'Tailwind', 'LocalStorage'],
+    tech: ['Next.js', 'TypeScript', 'PostgreSQL', 'Prisma', 'Tailwind CSS'],
     links: {
-      github: 'https://github.com/your-handle/internship-tracker',
-      live: 'https://your-demo-link.com',
+      github: 'https://github.com/AdhishaSamarasinghe/workzup',
+      live: 'https://www.workzup.lk/',
     },
   },
   {
-    title: 'Realtime Study Rooms',
+    title: 'WaffleHut – Animated Waffle Shop Landing Page',
     description:
-      'Realtime rooms for focused co-working with timers, notes, and presence. Designed for mobile first, works great on slow networks.',
+      'A cinematic animated waffle shop landing page featuring scroll-based storytelling, smooth transitions, and immersive dessert-themed interactions.',
     highlights: [
-      'Built realtime presence + rooms to support collaborative sessions.',
-      'Optimized for mobile and degraded networks with efficient updates.',
-      'Implemented simple room state management for predictable UX.',
+      'Built scroll-controlled PNG sequence animations using HTML5 Canvas',
+      'Implemented cinematic scrollytelling with GSAP ScrollTrigger',
+      'Designed responsive modern UI with playful branding',
+      'Created interactive transitions using Framer Motion',
+      'Optimized image preloading and rendering performance',
+      'Developed mobile-friendly animated layouts',
     ],
-    tech: ['React', 'WebSocket', 'Node.js'],
+    tech: ['Next.js', 'React', 'Tailwind CSS', 'Framer Motion', 'GSAP', 'TypeScript', 'HTML5 Canvas'],
     links: {
-      github: 'https://github.com/your-handle/study-rooms',
+      github: 'https://github.com/AdhishaSamarasinghe/wafflehut',
+      live: '#',
     },
   },
   {
-    title: 'Algorithm Visualizer',
+    title: 'Personal Portfolio Website',
     description:
-      'Interactive visualizations for classic algorithms with step-through controls and explanations. Great for interview prep and teaching.',
+      'A modern responsive portfolio website showcasing projects, skills, and frontend development experience.',
     highlights: [
-      'Created step-by-step controls and explanations for interview prep.',
-      'Built reusable visualization primitives for multiple algorithms.',
-      'Focused on clarity and performance for smooth animations.',
+      'Built reusable UI components using modern frontend practices',
+      'Designed clean and premium user experience',
+      'Optimized performance and smooth navigation',
+      'Deployed using Vercel for reliable hosting',
     ],
-    tech: ['React', 'D3', 'TypeScript'],
+    tech: ['Next.js', 'Tailwind CSS', 'Framer Motion'],
     links: {
-      github: 'https://github.com/your-handle/algorithm-visualizer',
+      github: 'https://github.com/AdhishaSamarasinghe/portfolio',
+      live: '#',
     },
   },
+  {
+    title: 'Band Practice Booking System',
+    description:
+      'A full-stack booking platform for scheduling music studio sessions and managing band availability efficiently.',
+    highlights: [
+      'Implemented weekly availability tracking system',
+      'Built session booking and practice fee calculation features',
+      'Integrated backend APIs with PostgreSQL database',
+      'Designed responsive user-friendly scheduling interface',
+      'Structured efficient frontend-to-backend communication',
+    ],
+    tech: ['Next.js', 'TypeScript', 'PostgreSQL', 'Prisma'],
+    links: {
+      github: 'https://github.com/AdhishaSamarasinghe/band-practice-scheduler',
+      live: '#',
+    },
+  },
+  {
+    title: 'Guitar Guide – Learning & Reference Platform',
+    description:
+      'A responsive educational platform designed for learning guitar fundamentals, techniques, and guitar types.',
+    highlights: [
+      'Designed structured learning-focused UI',
+      'Built reusable frontend components',
+      'Implemented responsive layouts for all devices',
+      'Created intuitive navigation for better usability',
+    ],
+    tech: ['Next.js', 'TypeScript', 'Tailwind CSS'],
+    links: {
+      github: 'https://github.com/AdhishaSamarasinghe/guitar-guide',
+      live: '#',
+    },
+  },
+  
 ]
 
 export const contact = {

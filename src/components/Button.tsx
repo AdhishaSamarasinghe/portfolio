@@ -32,6 +32,7 @@ type ButtonLinkProps = PropsWithChildren<{
   variant?: Variant
   target?: string
   rel?: string
+  download?: string | boolean
   'aria-label'?: string
 }>
 
@@ -41,6 +42,7 @@ export function ButtonLink({
   variant = 'primary',
   target,
   rel,
+  download,
   children,
   ...rest
 }: ButtonLinkProps) {
@@ -49,6 +51,7 @@ export function ButtonLink({
       href={href}
       target={target}
       rel={rel}
+      download={download}
       className={cn(base, variants[variant], className)}
       {...rest}
     >
