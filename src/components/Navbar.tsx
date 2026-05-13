@@ -105,9 +105,9 @@ export function Navbar() {
       </a>
       <header className="sticky top-0 z-50 border-b border-white/6 bg-bg/[0.98] backdrop-blur-lg supports-[backdrop-filter]:bg-bg/[0.94] shadow-[0_12px_34px_rgba(0,0,0,0.55)]">
         <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/[0.08] to-transparent" aria-hidden="true" />
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-brand-indigo/25 to-transparent" aria-hidden="true" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" aria-hidden="true" />
         <div
-          className="pointer-events-none absolute left-0 top-0 h-0.5 bg-gradient-to-r from-brand-indigo via-teal-400 to-brand-cyan"
+          className="pointer-events-none absolute left-0 top-0 h-0.5 bg-gradient-to-r from-zinc-700 via-zinc-400 to-zinc-200"
           style={{ width: `${Math.round(scrollProgress * 100)}%` }}
           aria-hidden="true"
         />
@@ -142,7 +142,7 @@ export function Navbar() {
                 {item.label}
                 <span
                   className={cn(
-                    'pointer-events-none absolute inset-x-3 -bottom-1 h-0.5 rounded-full bg-gradient-to-r from-teal-300/0 via-teal-200/70 to-teal-300/0 transition-opacity',
+                    'pointer-events-none absolute inset-x-3 -bottom-1 h-0.5 rounded-full bg-gradient-to-r from-white/0 via-white/70 to-white/0 transition-opacity',
                     activeId === item.id ? 'opacity-100' : 'opacity-0 group-hover:opacity-50',
                   )}
                   aria-hidden="true"

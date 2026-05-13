@@ -27,7 +27,7 @@ export function Hero() {
 
             <h1 className="mt-7 text-4xl font-semibold tracking-tight sm:text-5xl lg:text-7xl">
               <span className="block text-slate-100/90">I build</span>
-              <span className="block bg-gradient-to-r from-white via-teal-100 to-sky-100 bg-clip-text text-transparent">
+              <span className="block bg-gradient-to-r from-white via-zinc-200 to-zinc-400 bg-clip-text text-transparent">
                 reliable software
               </span>
               <span className="mt-4 block text-xl font-semibold text-slate-100/[0.85] sm:text-3xl">
@@ -103,8 +103,8 @@ export function Hero() {
 
               <div className="card relative overflow-hidden p-6">
                 <div className="pointer-events-none absolute inset-0 opacity-60" aria-hidden="true">
-                  <div className="absolute -left-12 top-0 h-40 w-40 rounded-full bg-brand-indigo/[0.14] blur-2xl" />
-                  <div className="absolute -right-16 bottom-0 h-44 w-44 rounded-full bg-brand-cyan/10 blur-2xl" />
+                  <div className="absolute -left-12 top-0 h-40 w-40 rounded-full bg-white/[0.08] blur-2xl" />
+                  <div className="absolute -right-16 bottom-0 h-44 w-44 rounded-full bg-zinc-500/10 blur-2xl" />
                 </div>
                 <div className="relative">
                   <p className="kicker">Availability</p>
@@ -130,7 +130,7 @@ export function Hero() {
               >
                   <div className="pointer-events-none absolute inset-0 rounded-[30px] border border-white/20" aria-hidden="true" />
                   <div
-                    className="pointer-events-none absolute inset-[6px] rounded-[24px] bg-gradient-to-br from-cyan-300/20 via-transparent to-pink-300/18 opacity-70 transition-opacity duration-300 group-hover:opacity-95"
+                    className="pointer-events-none absolute inset-[6px] rounded-[24px] bg-gradient-to-br from-white/16 via-transparent to-zinc-400/14 opacity-70 transition-opacity duration-300 group-hover:opacity-95"
                     aria-hidden="true"
                   />
                   {profile.photo ? (

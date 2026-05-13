@@ -5,14 +5,14 @@ export default {
     extend: {
       colors: {
         bg: {
-          DEFAULT: '#050A14',
-          2: '#070E1D',
-          3: '#0B1426',
+          DEFAULT: '#000000',
+          2: '#050505',
+          3: '#0B0B0B',
         },
         brand: {
-          indigo: '#14B8A6',
-          cyan: '#38BDF8',
-          amber: '#F97316',
+          indigo: '#6B7280',
+          cyan: '#9CA3AF',
+          amber: '#D1D5DB',
         },
       },
       keyframes: {

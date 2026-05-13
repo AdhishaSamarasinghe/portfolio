@@ -54,7 +54,7 @@ export function Contact() {
               <button
                 type="button"
                 onClick={copyEmail}
-                className="rounded-xl border border-white/[0.12] bg-white/[0.04] px-3 py-2 text-xs font-semibold text-slate-100/[0.8] transition hover:border-white/20 hover:bg-white/[0.07] hover:text-white"
+                className="rounded-xl border border-white/[0.12] bg-white/[0.04] px-3 py-2 text-xs font-semibold text-slate-100/[0.8] transition hover:border-white/20 hover:bg-white/[0.07] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-bg"
                 aria-label="Copy email address"
               >
                 {copied ? 'Copied' : 'Copy'}
@@ -124,7 +124,7 @@ export function Contact() {
               <input
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="h-12 rounded-xl border border-white/10 bg-white/[0.03] px-4 text-base text-slate-100/90 outline-none placeholder:text-slate-200/40 focus:border-teal-300/60 focus:bg-white/[0.05] focus:ring-1 focus:ring-teal-300/40"
+                className="h-12 rounded-xl border border-white/10 bg-white/[0.03] px-4 text-base text-slate-100/90 outline-none placeholder:text-slate-200/40 focus:border-white/40 focus:bg-white/[0.05] focus:ring-1 focus:ring-white/25"
                 placeholder="Jane Doe"
                 autoComplete="name"
               />
@@ -135,7 +135,7 @@ export function Contact() {
               <input
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="h-12 rounded-xl border border-white/10 bg-white/[0.03] px-4 text-base text-slate-100/90 outline-none placeholder:text-slate-200/40 focus:border-teal-300/60 focus:bg-white/[0.05] focus:ring-1 focus:ring-teal-300/40"
+                className="h-12 rounded-xl border border-white/10 bg-white/[0.03] px-4 text-base text-slate-100/90 outline-none placeholder:text-slate-200/40 focus:border-white/40 focus:bg-white/[0.05] focus:ring-1 focus:ring-white/25"
                 placeholder="jane@email.com"
                 autoComplete="email"
               />
@@ -146,7 +146,7 @@ export function Contact() {
               <textarea
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
-                className="min-h-36 resize-y rounded-xl border border-white/10 bg-white/[0.03] px-4 py-4 text-base text-slate-100/90 outline-none placeholder:text-slate-200/40 focus:border-teal-300/60 focus:bg-white/[0.05] focus:ring-1 focus:ring-teal-300/40"
+                className="min-h-36 resize-y rounded-xl border border-white/10 bg-white/[0.03] px-4 py-4 text-base text-slate-100/90 outline-none placeholder:text-slate-200/40 focus:border-white/40 focus:bg-white/[0.05] focus:ring-1 focus:ring-white/25"
                 placeholder="Hi! We’re looking for a summer intern..."
               />
             </label>

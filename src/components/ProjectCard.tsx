@@ -7,7 +7,7 @@ function ActionLink({ href, children }: { href: string; children: string }) {
   return (
     <a
       className={cn(
-        'inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.04] px-3 py-2 text-sm font-semibold text-slate-100/90 transition will-change-transform shadow-sm shadow-black/[0.15] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-300/60 focus-visible:ring-offset-2 focus-visible:ring-offset-bg',
+        'inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.04] px-3 py-2 text-sm font-semibold text-slate-100/90 transition will-change-transform shadow-sm shadow-black/[0.15] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-bg',
         'hover:-translate-y-0.5 hover:border-white/20 hover:bg-white/[0.07] hover:text-white hover:shadow-black/25',
       )}
       href={href}
@@ -40,7 +40,7 @@ export function ProjectCard({ project }: { project: Project }) {
           {project.highlights.slice(0, 3).map((h) => (
             <li key={h} className="flex gap-3">
               <span
-                className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gradient-to-r from-brand-indigo/80 to-brand-cyan/70"
+                className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gradient-to-r from-white/65 to-zinc-400/65"
                 aria-hidden="true"
               />
               <span className="leading-relaxed">{h}</span>

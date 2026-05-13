@@ -40,15 +40,15 @@ export function About() {
             <h3 className="text-base font-semibold">Principles</h3>
             <ul className="mt-4 space-y-3 text-base text-slate-200/75">
               <li className="flex gap-3">
-                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-indigo/70" aria-hidden="true" />
+                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-white/50" aria-hidden="true" />
                 <span>Make the happy path fast and obvious.</span>
               </li>
               <li className="flex gap-3">
-                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-cyan/70" aria-hidden="true" />
+                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-white/40" aria-hidden="true" />
                 <span>Keep systems simple until complexity is justified.</span>
               </li>
               <li className="flex gap-3">
-                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-amber/70" aria-hidden="true" />
+                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-white/30" aria-hidden="true" />
                 <span>Write code that future-you can change safely.</span>
               </li>
             </ul>

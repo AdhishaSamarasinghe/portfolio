@@ -133,14 +133,8 @@ export function CustomCursor() {
       className="pointer-events-none fixed inset-0 z-[70] hidden [@media(hover:hover)_and_(pointer:fine)]:block"
       aria-hidden="true"
     >
-      <div
-        ref={ringRef}
-        className="cursor-ring"
-      />
-      <div
-        ref={dotRef}
-        className="cursor-dot"
-      />
+      <div ref={ringRef} className="cursor-ring" />
+      <div ref={dotRef} className="cursor-dot" />
     </div>
   )
 }
