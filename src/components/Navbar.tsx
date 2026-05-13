@@ -33,7 +33,6 @@ function MenuIcon({ open }: { open: boolean }) {
 export function Navbar() {
   const [open, setOpen] = useState(false)
   const [activeId, setActiveId] = useState<(typeof navItems)[number]['id']>('home')
-  const [scrollProgress, setScrollProgress] = useState(0)
 
   const items = useMemo(
     () =>
@@ -89,20 +88,6 @@ export function Navbar() {
     }
   }, [open])
 
-  useEffect(() => {
-    function onScroll() {
-      const doc = document.documentElement
-      const scrollTop = doc.scrollTop || document.body.scrollTop
-      const scrollHeight = doc.scrollHeight - doc.clientHeight
-      const progress = scrollHeight > 0 ? scrollTop / scrollHeight : 0
-      setScrollProgress(Math.max(0, Math.min(1, progress)))
-    }
-
-    onScroll()
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
-
   return (
     <>
       <a
@@ -136,7 +121,7 @@ export function Navbar() {
                 href="#top"
                 whileHover={{ y: -1, scale: 1.01 }}
                 whileTap={{ scale: 0.99 }}
-                className="group inline-flex min-w-[9rem] flex-shrink-0 items-center justify-center rounded-[1.45rem] bg-[#f5f5f5] px-4 py-2.5 text-center text-zinc-950 shadow-[0_12px_24px_rgba(0,0,0,0.18)] ring-1 ring-white/25 transition-shadow hover:shadow-[0_16px_34px_rgba(0,0,0,0.24)] sm:min-w-[10.5rem]"
+                className="group inline-flex min-w-[9rem] flex-shrink-0 items-center justify-center rounded-[1.45rem] border border-[#2f2f2f] bg-[#181818] px-4 py-2.5 text-center text-white shadow-[0_12px_24px_rgba(0,0,0,0.24)] transition-shadow hover:bg-[#202020] hover:shadow-[0_16px_34px_rgba(0,0,0,0.28)] sm:min-w-[10.5rem]"
               >
                 <span className="whitespace-pre-line text-[0.68rem] font-semibold leading-[1.02] tracking-[0.28em] uppercase sm:text-[0.75rem]">
                   ADHISHA
@@ -256,11 +241,6 @@ export function Navbar() {
               aria-hidden="true"
             />
 
-            <motion.div
-              className="pointer-events-none absolute inset-x-3 top-0 h-0.5 rounded-full bg-gradient-to-r from-transparent via-[#5a5a5a] to-transparent"
-              style={{ width: `${Math.round(scrollProgress * 100)}%` }}
-              aria-hidden="true"
-            />
           </div>
         </Container>
       </motion.header>
