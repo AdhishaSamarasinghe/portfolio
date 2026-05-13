@@ -126,7 +126,7 @@ export function Hero() {
           <Reveal className="lg:col-span-5">
             <div className="p-3">
               <div
-                className="group relative aspect-[3/4] w-full max-w-[340px] sm:max-w-[380px] lg:max-w-full min-h-[420px] sm:min-h-[500px] lg:min-h-[560px] mx-auto overflow-hidden rounded-[30px] border border-white/[0.16] bg-slate-950/60 p-[6px] shadow-[0_16px_46px_rgba(0,0,0,0.6)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_58px_rgba(0,0,0,0.72)]"
+                className="group relative aspect-[3/4] w-full max-w-[340px] sm:max-w-[380px] lg:max-w-full min-h-[420px] sm:min-h-[500px] lg:min-h-[560px] mx-auto overflow-hidden rounded-[30px] border border-white/[0.14] bg-zinc-950/75 p-[6px] shadow-[0_16px_46px_rgba(0,0,0,0.6)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_58px_rgba(0,0,0,0.72)]"
               >
                   <div className="pointer-events-none absolute inset-0 rounded-[30px] border border-white/20" aria-hidden="true" />
                   <div
@@ -144,7 +144,7 @@ export function Hero() {
                     />
                   ) : null}
                   {!hasImage || !profile.photo ? (
-                    <div className="relative m-[6px] flex h-[calc(100%-12px)] w-[calc(100%-12px)] items-center justify-center rounded-[24px] border border-white/20 bg-slate-900/90 text-5xl font-semibold text-white/[0.85] sm:text-6xl">
+                    <div className="relative m-[6px] flex h-[calc(100%-12px)] w-[calc(100%-12px)] items-center justify-center rounded-[24px] border border-white/20 bg-zinc-900/90 text-5xl font-semibold text-white/[0.85] sm:text-6xl">
                       {initials}
                     </div>
                   ) : null}
