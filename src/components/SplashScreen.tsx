@@ -276,15 +276,10 @@ export function SplashScreen({ onComplete }: SplashScreenProps) {
             transition={{ duration: reducedMotion ? 1 : 6.8, repeat: Infinity, ease: 'easeInOut' }}
           />
 
-          <motion.div
-            className="relative overflow-hidden rounded-[2rem] border border-white/[0.08] bg-white/[0.03] px-6 py-8 shadow-[0_30px_120px_rgba(0,0,0,0.6)] backdrop-blur-sm sm:px-10 sm:py-10"
-            initial={{ opacity: 0, y: 18, scale: 0.98 }}
-            animate={phase === 'outro' ? { opacity: 0, y: -12, scale: 0.985 } : { opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: reducedMotion ? 0.4 : 0.85, ease: [0.16, 1, 0.3, 1] }}
-          >
-            <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(110deg,transparent_0%,rgba(255,255,255,0.08)_24%,rgba(255,255,255,0.18)_50%,rgba(255,255,255,0.08)_76%,transparent_100%)] opacity-50 mix-blend-screen" />
+          <div className="relative">
+            <div className="pointer-events-none absolute inset-[-4rem] bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.12),transparent_38%)] blur-3xl" />
             <motion.div
-              className="pointer-events-none absolute inset-x-[-25%] top-1/2 h-px -translate-y-1/2 bg-gradient-to-r from-transparent via-white/80 to-transparent"
+              className="pointer-events-none absolute inset-x-[-28%] top-1/2 h-px -translate-y-1/2 bg-gradient-to-r from-transparent via-white/80 to-transparent"
               animate={phase === 'outro' ? { x: ['-8%', '8%'], opacity: [0.65, 0] } : { x: ['-12%', '12%', '-6%'], opacity: [0.12, 0.7, 0.18] }}
               transition={{ duration: reducedMotion ? 0.85 : 3.1, ease: 'easeInOut', repeat: phase === 'outro' ? 0 : Infinity, repeatType: 'mirror' }}
             />
@@ -306,15 +301,7 @@ export function SplashScreen({ onComplete }: SplashScreenProps) {
                 stagger={0.03}
               />
             </div>
-          </motion.div>
-
-          <motion.p
-            className="max-w-xl text-xs uppercase tracking-[0.45em] text-white/35 sm:text-sm"
-            animate={phase === 'outro' ? { opacity: 0, y: 8 } : { opacity: [0.15, 0.8, 0.28], y: [2, 0, -2] }}
-            transition={{ duration: reducedMotion ? 0.6 : 2.6, ease: 'easeInOut', repeat: phase === 'outro' ? 0 : Infinity, repeatType: 'mirror' }}
-          >
-            Cinematic portfolio intro
-          </motion.p>
+          </div>
         </div>
       </div>
     </motion.div>
