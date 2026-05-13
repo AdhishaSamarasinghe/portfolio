@@ -1,7 +1,9 @@
-import { useEffect, useRef } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import Lenis from 'lenis'
+import { AnimatePresence, motion } from 'framer-motion'
 
 import { CustomCursor } from './components/CustomCursor'
+import { SplashScreen } from './components/SplashScreen'
 import { Navbar } from './components/Navbar'
 import { profile } from './data/portfolio'
 import { About } from './sections/About'
@@ -13,6 +15,11 @@ import { Skills } from './sections/Skills'
 
 export default function App() {
   const lenisRef = useRef<Lenis | null>(null)
+  const [showSplash, setShowSplash] = useState(true)
+
+  const handleSplashComplete = useCallback(() => {
+    setShowSplash(false)
+  }, [])
 
   useEffect(() => {
     document.title = `${profile.name} | CS Internship Portfolio`
@@ -112,17 +119,47 @@ export default function App() {
     }
   }, [])
 
+  useEffect(() => {
+    const body = document.body
+    const html = document.documentElement
+    const previousBodyOverflow = body.style.overflow
+    const previousHtmlOverflow = html.style.overflow
+
+    if (showSplash) {
+      body.style.overflow = 'hidden'
+      html.style.overflow = 'hidden'
+    } else {
+      body.style.overflow = previousBodyOverflow
+      html.style.overflow = previousHtmlOverflow
+    }
+
+    return () => {
+      body.style.overflow = previousBodyOverflow
+      html.style.overflow = previousHtmlOverflow
+    }
+  }, [showSplash])
+
   return (
     <div className="min-h-dvh">
+      <AnimatePresence mode="wait">
+        {showSplash ? <SplashScreen key="splash" onComplete={handleSplashComplete} /> : null}
+      </AnimatePresence>
       <CustomCursor />
       <Navbar />
-      <main id="main">
+      <motion.main
+        id="main"
+        initial={false}
+        animate={showSplash ? { opacity: 0, scale: 1.01, filter: 'blur(10px)' } : { opacity: 1, scale: 1, filter: 'blur(0px)' }}
+        transition={{ duration: showSplash ? 0.5 : 0.95, ease: [0.16, 1, 0.3, 1] }}
+        className={showSplash ? 'pointer-events-none select-none' : ''}
+        aria-hidden={showSplash}
+      >
         <Hero />
         <About />
         <Skills />
         <Projects />
         <Contact />
-      </main>
+      </motion.main>
       <Footer />
     </div>
   )
