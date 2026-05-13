@@ -10,6 +10,7 @@ import { About } from './sections/About'
 import { Contact } from './sections/Contact'
 import { Footer } from './sections/Footer'
 import { Hero } from './sections/Hero'
+import { Experience } from './sections/Experience'
 import { Projects } from './sections/Projects'
 import { Skills } from './sections/Skills'
 
@@ -156,6 +157,7 @@ export default function App() {
       >
         <Hero />
         <About />
+        <Experience />
         <Skills />
         <Projects />
         <Contact />

@@ -15,15 +15,12 @@ export function Footer() {
             {navItems.map((i) => (
               <a
                 key={i.id}
-                href={`#${i.id}`}
+                href={i.id === 'home' ? '#top' : `#${i.id}`}
                 className="text-base font-semibold text-slate-100/70 hover:text-white"
               >
                 {i.label}
               </a>
             ))}
-            <a href="#top" className="text-base font-semibold text-slate-100/70 hover:text-white">
-              Top
-            </a>
           </nav>
 
           <div className="flex flex-wrap gap-4 sm:justify-end">
