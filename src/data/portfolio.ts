@@ -58,9 +58,20 @@ export const ctas = {
 } as const
 
 export const skills = {
-  Languages: ['TypeScript', 'JavaScript', 'Python', 'Java', 'SQL'],
-  Frameworks: ['React', 'Node.js', 'Express', 'Next.js', 'Tailwind CSS'],
-  Tools: ['Git', 'Docker', 'PostgreSQL', 'Linux', 'Figma'],
+  Languages: ['JavaScript', 'TypeScript', 'Python', 'Java', 'SQL'],
+  Frontend: ['Next.js', 'React', 'Tailwind CSS', 'Responsive Design', 'UI/UX Design', 'Framer Motion'],
+  Backend: ['Node.js', 'Express', 'REST APIs', 'Authentication & Authorization', 'Prisma', 'PostgreSQL'],
+  'Tools & Deployment': ['Git', 'GitHub', 'Vercel', 'Railway', 'VS Code', 'Postman', 'Environment Configuration', 'Docker'],
+  'Additional Skills': [
+    'Performance Optimization',
+    'Debugging & Problem Solving',
+    'Payment Gateway (PayHere)',
+    'Full Stack Web Development',
+    'Agile',
+    'ClickUp',
+    'Agile & Team Collaboration',
+    'Figma (Basic)',
+  ],
 } as const
 
 export const projects: Project[] = [
