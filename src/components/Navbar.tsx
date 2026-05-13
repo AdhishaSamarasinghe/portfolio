@@ -117,23 +117,14 @@ export function Navbar() {
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         className="sticky top-5 z-50"
       >
-        <Container>
-          <div className="relative isolate overflow-hidden rounded-[2.15rem] border border-white/10 bg-[rgba(12,12,14,0.82)] px-3 py-3 shadow-[0_20px_60px_rgba(0,0,0,0.45)] backdrop-blur-[24px] sm:px-4">
-            <div
-              className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.06)_0%,rgba(255,255,255,0.03)_30%,rgba(255,255,255,0.015)_100%)]"
-              aria-hidden="true"
-            />
-            <div
-              className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.09),transparent_42%),radial-gradient(circle_at_50%_120%,rgba(255,255,255,0.05),transparent_40%)] opacity-80"
-              aria-hidden="true"
-            />
-            <div className="pointer-events-none absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22120%22 height=%22120%22 viewBox=%220 0 120 120%22%3E%3Cfilter id=%22n%22 x=%220%22 y=%220%22 width=%22100%25%22 height=%22100%25%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22 numOctaves=%222%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22120%22 height=%22120%22 filter=%22url(%23n)%22 opacity=%220.28%22/%3E%3C/svg%3E')] opacity-[0.06] mix-blend-soft-light" aria-hidden="true" />
+        <Container className="max-w-[84rem] px-4 sm:px-6 lg:px-8">
+          <div className="relative isolate overflow-hidden rounded-[2.15rem] border border-[#2a2a2a] bg-[#111111] px-4 py-4 shadow-[0_20px_60px_rgba(0,0,0,0.52)] sm:px-5 lg:px-6">
             <div className="flex items-center gap-3 lg:grid lg:grid-cols-[auto,minmax(0,1fr),auto] lg:items-center lg:gap-4">
               <motion.a
                 href="#top"
                 whileHover={{ y: -1, scale: 1.01 }}
                 whileTap={{ scale: 0.99 }}
-                className="group inline-flex min-w-[8.85rem] flex-shrink-0 items-center justify-center rounded-[1.45rem] bg-white px-4 py-2.5 text-center text-zinc-950 shadow-[0_12px_28px_rgba(0,0,0,0.16)] ring-1 ring-white/40 transition-shadow hover:shadow-[0_16px_36px_rgba(0,0,0,0.22)] sm:min-w-[10.5rem]"
+                className="group inline-flex min-w-[9rem] flex-shrink-0 items-center justify-center rounded-[1.45rem] bg-[#f5f5f5] px-4 py-2.5 text-center text-zinc-950 shadow-[0_12px_24px_rgba(0,0,0,0.18)] ring-1 ring-white/25 transition-shadow hover:shadow-[0_16px_34px_rgba(0,0,0,0.24)] sm:min-w-[10.5rem]"
               >
                 <span className="whitespace-pre-line text-[0.68rem] font-semibold leading-[1.02] tracking-[0.28em] uppercase sm:text-[0.75rem]">
                   ADHISHA
@@ -151,13 +142,13 @@ export function Navbar() {
                     whileTap={{ scale: 0.98 }}
                     className={cn(
                       'group relative rounded-full px-4 py-3 text-sm font-medium transition-colors',
-                      activeId === item.id ? 'bg-white/[0.08] text-white' : 'text-white/58 hover:text-white',
+                      activeId === item.id ? 'bg-[#1c1c1c] text-white' : 'text-zinc-400 hover:bg-[#1a1a1a] hover:text-white',
                     )}
                   >
                     {item.label}
                     <span
                       className={cn(
-                        'pointer-events-none absolute inset-x-4 bottom-1.5 h-px origin-left scale-x-0 bg-white/80 transition-transform duration-300 ease-out group-hover:scale-x-100',
+                        'pointer-events-none absolute inset-x-4 bottom-1.5 h-px origin-left scale-x-0 bg-white transition-transform duration-300 ease-out group-hover:scale-x-100',
                         activeId === item.id ? 'scale-x-100' : '',
                       )}
                       aria-hidden="true"
@@ -174,16 +165,15 @@ export function Navbar() {
                   aria-label="Download CV"
                   whileHover={{ y: -2, scale: 1.02, boxShadow: '0 18px 40px rgba(0, 0, 0, 0.14)' }}
                   whileTap={{ scale: 0.985 }}
-                  className="group relative inline-flex items-center justify-center overflow-hidden rounded-full border border-white/[0.18] bg-white/[0.06] px-5 py-3 text-xs font-semibold tracking-[0.28em] text-white transition-colors duration-300 hover:bg-white hover:text-zinc-950"
+                  className="group relative inline-flex items-center justify-center overflow-hidden rounded-full border border-[#323232] bg-[#171717] px-5 py-3 text-xs font-semibold tracking-[0.28em] text-white transition-colors duration-300 hover:bg-[#222222]"
                 >
                   <span className="relative z-10">DOWNLOAD CV</span>
-                  <span className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/50 to-transparent opacity-0 transition-all duration-500 group-hover:translate-x-full group-hover:opacity-35" />
                 </motion.a>
               </div>
 
               <button
                 type="button"
-                className="ml-auto inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/[0.16] bg-white/[0.08] text-white shadow-[0_10px_24px_rgba(0,0,0,0.18)] transition hover:-translate-y-0.5 hover:bg-white/[0.12] hover:shadow-[0_14px_28px_rgba(0,0,0,0.22)] lg:hidden"
+                className="ml-auto inline-flex h-12 w-12 items-center justify-center rounded-full border border-[#313131] bg-[#171717] text-white shadow-[0_10px_24px_rgba(0,0,0,0.22)] transition hover:-translate-y-0.5 hover:bg-[#222222] hover:shadow-[0_14px_28px_rgba(0,0,0,0.28)] lg:hidden"
                 aria-label={open ? 'Close menu' : 'Open menu'}
                 aria-expanded={open}
                 onClick={() => setOpen((v) => !v)}
@@ -196,7 +186,7 @@ export function Navbar() {
               {open ? (
                 <>
                   <motion.div
-                    className="fixed inset-0 z-40 bg-black/40 backdrop-blur-[4px] lg:hidden"
+                    className="fixed inset-0 z-40 bg-[#050505] lg:hidden"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
@@ -205,7 +195,7 @@ export function Navbar() {
                   />
 
                   <motion.div
-                    className="fixed inset-x-4 top-24 z-50 rounded-[1.75rem] border border-white/[0.12] bg-[rgba(12,12,14,0.94)] p-4 shadow-[0_24px_60px_rgba(0,0,0,0.4)] backdrop-blur-[26px] lg:hidden sm:inset-x-6"
+                    className="fixed inset-x-4 top-24 z-50 rounded-[1.75rem] border border-[#2a2a2a] bg-[#111111] p-4 shadow-[0_24px_60px_rgba(0,0,0,0.45)] lg:hidden sm:inset-x-6"
                     initial={{ opacity: 0, y: -10, scale: 0.98, filter: 'blur(10px)' }}
                     animate={{ opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' }}
                     exit={{ opacity: 0, y: -8, scale: 0.985, filter: 'blur(8px)' }}
@@ -221,8 +211,8 @@ export function Navbar() {
                           className={cn(
                             'rounded-[1.15rem] px-4 py-3 text-sm font-medium transition-colors',
                             activeId === item.id
-                              ? 'bg-white/[0.08] text-white'
-                              : 'text-white/70 hover:bg-white/[0.06] hover:text-white',
+                              ? 'bg-[#1c1c1c] text-white'
+                              : 'text-zinc-400 hover:bg-[#1a1a1a] hover:text-white',
                           )}
                           onClick={() => setOpen(false)}
                         >
@@ -239,7 +229,7 @@ export function Navbar() {
                         aria-label="Download CV"
                         whileHover={{ y: -1, scale: 1.01 }}
                         whileTap={{ scale: 0.985 }}
-                        className="inline-flex items-center justify-center rounded-full border border-white/[0.16] bg-white/[0.08] px-5 py-3 text-xs font-semibold tracking-[0.26em] text-white transition-colors hover:bg-white hover:text-zinc-950"
+                        className="inline-flex items-center justify-center rounded-full border border-[#323232] bg-[#171717] px-5 py-3 text-xs font-semibold tracking-[0.26em] text-white transition-colors hover:bg-[#222222]"
                       >
                         DOWNLOAD CV
                       </motion.a>
@@ -250,12 +240,12 @@ export function Navbar() {
             </AnimatePresence>
 
             <div
-              className="pointer-events-none absolute inset-x-3 bottom-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"
+              className="pointer-events-none absolute inset-x-3 bottom-0 h-px bg-gradient-to-r from-transparent via-[#2e2e2e] to-transparent"
               aria-hidden="true"
             />
 
             <motion.div
-              className="pointer-events-none absolute inset-x-3 top-0 h-0.5 rounded-full bg-gradient-to-r from-transparent via-white/14 to-transparent"
+              className="pointer-events-none absolute inset-x-3 top-0 h-0.5 rounded-full bg-gradient-to-r from-transparent via-[#5a5a5a] to-transparent"
               style={{ width: `${Math.round(scrollProgress * 100)}%` }}
               aria-hidden="true"
             />

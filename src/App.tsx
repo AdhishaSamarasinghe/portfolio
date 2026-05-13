@@ -152,7 +152,7 @@ export default function App() {
         initial={false}
         animate={showSplash ? { opacity: 0, scale: 1.01, filter: 'blur(10px)' } : { opacity: 1, scale: 1, filter: 'blur(0px)' }}
         transition={{ duration: showSplash ? 0.5 : 0.95, ease: [0.16, 1, 0.3, 1] }}
-        className={showSplash ? 'pointer-events-none select-none' : ''}
+        className={showSplash ? 'pointer-events-none select-none pt-3 sm:pt-4' : 'pt-3 sm:pt-4'}
         aria-hidden={showSplash}
       >
         <Hero />
