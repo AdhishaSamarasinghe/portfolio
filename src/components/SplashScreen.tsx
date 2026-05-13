@@ -149,12 +149,12 @@ export function SplashScreen({ onComplete }: SplashScreenProps) {
 
   useEffect(() => {
     const timings = reducedMotion
-      ? { intro: 220, hold: 520, outro: 420, total: 1160 }
-      : { intro: 640, hold: 1820, outro: 1420, total: 4880 }
+      ? { intro: 220, hold: 520, outro: 420 }
+      : { intro: 640, hold: 1820, outro: 1420 }
 
     const holdTimer = window.setTimeout(() => setPhase('hold'), timings.intro)
     const outroTimer = window.setTimeout(() => setPhase('outro'), timings.intro + timings.hold)
-    const completeTimer = window.setTimeout(onComplete, timings.total)
+    const completeTimer = window.setTimeout(onComplete, timings.intro + timings.hold + 1000)
 
     return () => {
       window.clearTimeout(holdTimer)
