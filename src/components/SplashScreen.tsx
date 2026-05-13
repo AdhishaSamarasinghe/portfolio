@@ -257,12 +257,6 @@ export function SplashScreen({ onComplete }: SplashScreenProps) {
       </div>
 
       <motion.div
-        className="absolute left-0 top-1/2 h-px w-full -translate-y-1/2 bg-gradient-to-r from-transparent via-white/60 to-transparent blur-sm"
-        animate={phase === 'outro' ? { opacity: [0.28, 0.85, 0], scaleX: [0.82, 1, 1.06] } : { opacity: [0.08, 0.45, 0.15], x: [-28, 28, -10] }}
-        transition={{ duration: reducedMotion ? 0.9 : 3.8, ease: [0.16, 1, 0.3, 1], repeat: phase === 'outro' ? 0 : Infinity, repeatType: 'mirror' }}
-      />
-
-      <motion.div
         className="absolute left-1/2 top-1/2 h-[140%] w-[1px] -translate-x-1/2 -translate-y-1/2 bg-gradient-to-b from-transparent via-white/16 to-transparent opacity-40 blur-[1px]"
         animate={{ opacity: [0.05, 0.22, 0.08], scaleY: [0.92, 1, 1.04], x: [-18, 18, -8] }}
         transition={{ duration: reducedMotion ? 1.1 : 6.4, ease: 'easeInOut', repeat: Infinity, repeatType: 'mirror' }}
@@ -278,12 +272,6 @@ export function SplashScreen({ onComplete }: SplashScreenProps) {
 
           <div className="relative">
             <div className="pointer-events-none absolute inset-[-4rem] bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.12),transparent_38%)] blur-3xl" />
-            <motion.div
-              className="pointer-events-none absolute inset-x-[-28%] top-1/2 h-px -translate-y-1/2 bg-gradient-to-r from-transparent via-white/80 to-transparent"
-              animate={phase === 'outro' ? { x: ['-8%', '8%'], opacity: [0.65, 0] } : { x: ['-12%', '12%', '-6%'], opacity: [0.12, 0.7, 0.18] }}
-              transition={{ duration: reducedMotion ? 0.85 : 3.1, ease: 'easeInOut', repeat: phase === 'outro' ? 0 : Infinity, repeatType: 'mirror' }}
-            />
-
             <div className="relative flex flex-col items-center gap-4 sm:gap-5">
               <AnimatedWord
                 text={firstName}
