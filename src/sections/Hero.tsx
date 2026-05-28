@@ -71,7 +71,7 @@ export function Hero() {
                       href={s.href}
                       target={s.href.startsWith('http') ? '_blank' : undefined}
                       rel={s.href.startsWith('http') ? 'noreferrer' : undefined}
-                      className="text-sm font-semibold text-slate-100/70 hover:text-white"
+                      className="inline-flex items-center rounded-full border border-white/10 px-3 py-1 text-sm font-semibold text-slate-100/80 transition-all duration-200 hover:-translate-y-0.5 hover:border-white/25 hover:bg-white/10 hover:text-white hover:shadow-[0_10px_20px_rgba(0,0,0,0.35)]"
                     >
                       {s.label}
                     </a>

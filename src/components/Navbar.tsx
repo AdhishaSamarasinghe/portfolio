@@ -209,8 +209,9 @@ export function Navbar() {
               <div className="hidden items-center justify-self-end lg:flex">
                 <motion.a
                   href={ctas.resumeHref}
-                  download="Adhisha-Samarasinghe-Resume.pdf"
-                  aria-label="Open CV"
+                  target={ctas.resumeHref.startsWith('http') ? '_blank' : undefined}
+                  rel={ctas.resumeHref.startsWith('http') ? 'noreferrer' : undefined}
+                  aria-label="Download CV"
                   whileHover={{ y: -2, scale: 1.02, boxShadow: '0 18px 40px rgba(0, 0, 0, 0.14)' }}
                   whileTap={{ scale: 0.985 }}
                   className="group relative inline-flex items-center justify-center overflow-hidden rounded-full border border-[#323232] bg-[#171717] px-5 py-3 text-xs font-semibold tracking-[0.28em] text-white transition-colors duration-300 hover:bg-[#222222]"
