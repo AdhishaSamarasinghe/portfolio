@@ -157,7 +157,7 @@ export function Contact() {
                 type="submit"
                 disabled={!canSubmit}
                 variant="ghost"
-                className="pill-primary-button disabled:opacity-60"
+                className="pill-primary-button disabled:opacity-100"
               >
                 Send
               </Button>
