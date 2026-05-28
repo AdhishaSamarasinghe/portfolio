@@ -153,7 +153,12 @@ export function Contact() {
 
             <div className="flex items-center justify-between gap-3">
               <p className="text-sm text-slate-200/60">Tip: include role, timeline, and stack.</p>
-              <Button type="submit" disabled={!canSubmit} className="disabled:opacity-60">
+              <Button
+                type="submit"
+                disabled={!canSubmit}
+                variant="ghost"
+                className="rounded-full bg-white px-6 text-slate-900 shadow-[0_12px_26px_rgba(0,0,0,0.35)] hover:bg-white/90 hover:text-slate-900 disabled:opacity-60"
+              >
                 Send
               </Button>
             </div>
