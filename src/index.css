@@ -211,17 +211,17 @@
 }
 
 @media (hover: hover) and (pointer: fine) {
-  body {
+  body.cursor-ready {
     cursor: none;
   }
 
-  a,
-  button,
-  [role='button'],
-  input,
-  select,
-  textarea,
-  summary {
+  body.cursor-ready a,
+  body.cursor-ready button,
+  body.cursor-ready [role='button'],
+  body.cursor-ready input,
+  body.cursor-ready select,
+  body.cursor-ready textarea,
+  body.cursor-ready summary {
     cursor: none;
   }
 }

@@ -17,6 +17,8 @@ export function CustomCursor() {
     if (!isFinePointer()) return
     if (prefersReducedMotion()) return
 
+    const body = document.body
+
     const dotEl = dotRef.current
     const ringEl = ringRef.current
     if (!dotEl || !ringEl) return
@@ -48,17 +50,30 @@ export function CustomCursor() {
       dot.dataset.pressed = next ? 'true' : 'false'
     }
 
-    function onMove(e: PointerEvent) {
+    let pointerPreferred = false
+
+    function isPointerEvent(e: PointerEvent | MouseEvent): e is PointerEvent {
+      return 'pointerType' in e
+    }
+
+    function onMove(e: PointerEvent | MouseEvent) {
+      if (isPointerEvent(e)) {
+        pointerPreferred = true
+      } else if (pointerPreferred) {
+        return
+      }
       targetX = e.clientX
       targetY = e.clientY
       if (!visible) setVisible(true)
     }
 
-    function onDown() {
+    function onDown(e: PointerEvent | MouseEvent) {
+      if (!isPointerEvent(e) && pointerPreferred) return
       setPressed(true)
     }
 
-    function onUp() {
+    function onUp(e: PointerEvent | MouseEvent) {
+      if (!isPointerEvent(e) && pointerPreferred) return
       setPressed(false)
     }
 
@@ -79,11 +94,13 @@ export function CustomCursor() {
       )
     }
 
-    function onOver(e: PointerEvent) {
+    function onOver(e: PointerEvent | MouseEvent) {
+      if (!isPointerEvent(e) && pointerPreferred) return
       setPointer(isInteractive(e.target as Element | null))
     }
 
-    function onOut(e: PointerEvent) {
+    function onOut(e: PointerEvent | MouseEvent) {
+      if (!isPointerEvent(e) && pointerPreferred) return
       const to = (e.relatedTarget ?? null) as Element | null
       setPointer(isInteractive(to))
     }
@@ -104,27 +121,40 @@ export function CustomCursor() {
     setPressed(false)
     setPointer(false)
 
+    body.classList.add('cursor-ready')
+
     window.addEventListener('pointermove', onMove, { passive: true })
+    window.addEventListener('mousemove', onMove, { passive: true })
     window.addEventListener('pointerdown', onDown)
+    window.addEventListener('mousedown', onDown)
     window.addEventListener('pointerup', onUp)
+    window.addEventListener('mouseup', onUp)
     window.addEventListener('mouseenter', onEnter)
     window.addEventListener('mouseleave', onLeave)
 
     // capture hover state across all interactive elements
     window.addEventListener('pointerover', onOver, true)
     window.addEventListener('pointerout', onOut, true)
+    window.addEventListener('mouseover', onOver, true)
+    window.addEventListener('mouseout', onOut, true)
 
     raf = window.requestAnimationFrame(loop)
 
     return () => {
       window.removeEventListener('pointermove', onMove)
+      window.removeEventListener('mousemove', onMove)
       window.removeEventListener('pointerdown', onDown)
+      window.removeEventListener('mousedown', onDown)
       window.removeEventListener('pointerup', onUp)
+      window.removeEventListener('mouseup', onUp)
       window.removeEventListener('mouseenter', onEnter)
       window.removeEventListener('mouseleave', onLeave)
       window.removeEventListener('pointerover', onOver, true)
       window.removeEventListener('pointerout', onOut, true)
+      window.removeEventListener('mouseover', onOver, true)
+      window.removeEventListener('mouseout', onOut, true)
       window.cancelAnimationFrame(raf)
+      body.classList.remove('cursor-ready')
     }
   }, [])
 
