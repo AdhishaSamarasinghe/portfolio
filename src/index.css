@@ -225,6 +225,23 @@
 }
 
 @layer utilities {
+  .pill-primary-button {
+    background-color: #d1d5db !important;
+    color: #0f172a !important;
+    border-radius: 9999px;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    box-shadow: 0 12px 26px rgba(0, 0, 0, 0.35);
+  }
+
+  .pill-primary-button:hover,
+  .pill-primary-button:focus-visible,
+  .pill-primary-button:active {
+    background-color: #e5e7eb !important;
+    color: #0f172a !important;
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.45);
+  }
+
   .text-slate-200\/55 {
     color: rgb(226 232 240 / 1);
   }

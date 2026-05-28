@@ -46,7 +46,7 @@ export function Hero() {
               <ButtonLink
                 href="#projects"
                 variant="ghost"
-                className="rounded-full bg-white px-6 !text-slate-900 shadow-[0_12px_26px_rgba(0,0,0,0.35)] hover:bg-white/90 hover:!text-slate-900"
+                className="pill-primary-button"
               >
                 View work
               </ButtonLink>
