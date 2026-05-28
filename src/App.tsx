@@ -2,7 +2,6 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import Lenis from 'lenis'
 import { AnimatePresence, motion } from 'framer-motion'
 
-import { CustomCursor } from './components/CustomCursor'
 import { SplashScreen } from './components/SplashScreen'
 import { Navbar } from './components/Navbar'
 import { profile } from './data/portfolio'
@@ -145,7 +144,6 @@ export default function App() {
       <AnimatePresence mode="wait">
         {showSplash ? <SplashScreen key="splash" onComplete={handleSplashComplete} /> : null}
       </AnimatePresence>
-      <CustomCursor />
       <Navbar />
       <motion.main
         id="main"

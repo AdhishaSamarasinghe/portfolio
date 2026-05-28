@@ -5,6 +5,7 @@
 @layer base {
   :root {
     color-scheme: dark;
+    --cursor-default: url('/icons8-cursor-24.png') 3 1, auto;
   }
 
   html {
@@ -211,91 +212,15 @@
 }
 
 @media (hover: hover) and (pointer: fine) {
-  body.cursor-ready {
-    cursor: none;
-  }
-
-  body.cursor-ready a,
-  body.cursor-ready button,
-  body.cursor-ready [role='button'],
-  body.cursor-ready input,
-  body.cursor-ready select,
-  body.cursor-ready textarea,
-  body.cursor-ready summary {
-    cursor: none;
-  }
-}
-
-.cursor-dot {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 9px;
-  height: 9px;
-  border-radius: 999px;
-  transform: translate3d(-100px, -100px, 0);
-  translate: -50% -50%;
-  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.7));
-  box-shadow:
-    0 0 0 1px rgba(255, 255, 255, 0.25),
-    0 0 22px rgba(255, 255, 255, 0.18);
-  opacity: 0;
-  transition: opacity 200ms ease;
-}
-
-.cursor-dot[data-pressed='true'] {
-  width: 8px;
-  height: 8px;
-  box-shadow:
-    0 0 0 1px rgba(255, 255, 255, 0.3),
-    0 0 28px rgba(255, 255, 255, 0.24);
-}
-
-.cursor-ring {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 38px;
-  height: 38px;
-  border-radius: 999px;
-  transform: translate3d(-100px, -100px, 0);
-  translate: -50% -50%;
-  opacity: 0;
-  transition:
-    opacity 200ms ease,
-    width 180ms ease,
-    height 180ms ease,
-    border-color 180ms ease,
-    background-color 180ms ease,
-    box-shadow 220ms ease;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  background: rgba(255, 255, 255, 0.06);
-  box-shadow:
-    inset 0 0 0 1px rgba(255, 255, 255, 0.08),
-    0 12px 40px rgba(0, 0, 0, 0.32);
-  backdrop-filter: blur(12px);
-}
-
-.cursor-ring[data-pointer='true'] {
-  width: 46px;
-  height: 46px;
-  border-color: rgba(255, 255, 255, 0.26);
-  box-shadow:
-    inset 0 0 0 1px rgba(255, 255, 255, 0.2),
-    0 18px 60px rgba(255, 255, 255, 0.08);
-}
-
-.cursor-ring[data-pressed='true'] {
-  width: 32px;
-  height: 32px;
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.24);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .cursor-dot,
-  .cursor-ring {
-    display: none;
+  body,
+  a,
+  button,
+  [role='button'],
+  input,
+  select,
+  textarea,
+  summary {
+    cursor: var(--cursor-default);
   }
 }
 
