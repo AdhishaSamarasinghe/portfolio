@@ -226,59 +226,59 @@
 
 @layer utilities {
   .text-slate-200\/55 {
-    color: rgb(226 232 240 / 0.82);
+    color: rgb(226 232 240 / 0.9);
   }
 
   .text-slate-200\/60 {
-    color: rgb(226 232 240 / 0.84);
+    color: rgb(226 232 240 / 0.92);
   }
 
   .text-slate-200\/65 {
-    color: rgb(226 232 240 / 0.86);
+    color: rgb(226 232 240 / 0.94);
   }
 
   .text-slate-200\/70 {
-    color: rgb(226 232 240 / 0.88);
+    color: rgb(226 232 240 / 0.95);
   }
 
   .text-slate-200\/75 {
-    color: rgb(226 232 240 / 0.9);
+    color: rgb(226 232 240 / 0.96);
   }
 
   .text-slate-200\/80 {
-    color: rgb(226 232 240 / 0.92);
+    color: rgb(226 232 240 / 0.97);
   }
 
   .text-slate-100\/70 {
-    color: rgb(241 245 249 / 0.9);
+    color: rgb(241 245 249 / 0.96);
   }
 
   .text-slate-100\/80 {
-    color: rgb(241 245 249 / 0.94);
-  }
-
-  .text-slate-100\/90 {
     color: rgb(241 245 249 / 0.98);
   }
 
+  .text-slate-100\/90 {
+    color: rgb(241 245 249 / 1);
+  }
+
   [class~='text-slate-200/[0.65]'] {
-    color: rgb(226 232 240 / 0.86);
+    color: rgb(226 232 240 / 0.94);
   }
 
   [class~='text-slate-200/[0.75]'] {
-    color: rgb(226 232 240 / 0.9);
+    color: rgb(226 232 240 / 0.96);
   }
 
   [class~='text-slate-200/[0.8]'] {
-    color: rgb(226 232 240 / 0.92);
+    color: rgb(226 232 240 / 0.97);
   }
 
   [class~='text-slate-100/[0.8]'] {
-    color: rgb(241 245 249 / 0.94);
+    color: rgb(241 245 249 / 0.98);
   }
 
   [class~='text-slate-100/[0.85]'] {
-    color: rgb(241 245 249 / 0.96);
+    color: rgb(241 245 249 / 0.99);
   }
 }
 
