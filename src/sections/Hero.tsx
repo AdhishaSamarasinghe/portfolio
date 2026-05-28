@@ -43,7 +43,13 @@ export function Hero() {
             </p>
 
             <div className="mt-8 flex flex-wrap items-center gap-3">
-              <ButtonLink href="#projects">View work</ButtonLink>
+              <ButtonLink
+                href="#projects"
+                variant="ghost"
+                className="rounded-full bg-white px-6 text-slate-900 shadow-[0_12px_26px_rgba(0,0,0,0.35)] hover:bg-white/90 hover:text-slate-900"
+              >
+                View work
+              </ButtonLink>
               <ButtonLink href={`mailto:${contact.email}`} variant="secondary">
                 Email
               </ButtonLink>
