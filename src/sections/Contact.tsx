@@ -41,10 +41,10 @@ export function Contact() {
 
   return (
     <Section id="contact" title="Contact" subtitle="Let’s talk" className="border-t border-white/10">
-      <div className="grid gap-8 lg:grid-cols-2">
-        <div className="grid gap-5">
-          <div className="card p-7">
-            <div className="flex items-start justify-between gap-4">
+      <div className="grid gap-6 sm:gap-8 lg:grid-cols-2">
+        <div className="grid gap-4 sm:gap-5">
+          <div className="card p-5 sm:p-7">
+            <div className="flex items-start justify-between gap-3 sm:gap-4">
               <div>
                 <h3 className="text-base font-semibold">Email</h3>
                 <p className="mt-3 text-base text-slate-200/70">
@@ -70,9 +70,9 @@ export function Contact() {
               </ButtonLink>
             </div>
 
-            <div className="mt-6 rounded-2xl border border-white/10 bg-white/[0.03] p-5">
+            <div className="mt-4 sm:mt-6 rounded-2xl border border-white/10 bg-white/[0.03] p-4 sm:p-5">
               <p className="text-base font-semibold">What to include</p>
-              <ul className="mt-3 space-y-2 text-base text-slate-200/70">
+              <ul className="mt-2 sm:mt-3 space-y-1 sm:space-y-2 text-base text-slate-200/70">
                 <li>Role + timeline</li>
                 <li>Location / remote details</li>
                 <li>Tech stack (if relevant)</li>
@@ -80,11 +80,11 @@ export function Contact() {
             </div>
           </div>
 
-          <div className="grid gap-4 sm:grid-cols-2">
-            <div className="card h-full p-7">
+          <div className="grid gap-3 sm:gap-4 sm:grid-cols-2">
+            <div className="card h-full p-5 sm:p-6">
               <h3 className="text-base font-semibold">LinkedIn</h3>
               <p className="mt-2 text-base text-slate-200/70">Happy to connect and chat.</p>
-              <div className="mt-4">
+              <div className="mt-3 sm:mt-4">
                 <ButtonLink
                   href={profile.social.find((s) => s.label === 'LinkedIn')?.href ?? '#'}
                   variant="secondary"
@@ -95,10 +95,10 @@ export function Contact() {
                 </ButtonLink>
               </div>
             </div>
-            <div className="card h-full p-7">
+            <div className="card h-full p-5 sm:p-6">
               <h3 className="text-base font-semibold">Resume</h3>
               <p className="mt-2 text-base text-slate-200/70">One-page overview and links.</p>
-              <div className="mt-4">
+              <div className="mt-3 sm:mt-4">
                 <ButtonLink href={ctas.resumeHref} variant="secondary" target="_blank" rel="noreferrer">
                   Open resume
                 </ButtonLink>
@@ -108,7 +108,7 @@ export function Contact() {
         </div>
 
         <form
-          className="card p-7"
+          className="card p-5 sm:p-7"
           onSubmit={(e) => {
             e.preventDefault()
             if (!canSubmit) return

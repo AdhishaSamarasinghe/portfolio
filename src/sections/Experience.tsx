@@ -12,8 +12,8 @@ export function Experience() {
       subtitle="Education, focus, and practical momentum"
       className="border-t border-white/10"
     >
-      <div className="grid gap-5 lg:grid-cols-[1.2fr_0.8fr]">
-        <div className="card p-7 sm:p-8">
+      <div className="grid gap-4 sm:gap-5 lg:grid-cols-[1.2fr_0.8fr]">
+        <div className="card p-5 sm:p-7 lg:p-8">
           <div className="flex flex-wrap items-start justify-between gap-4">
             <div>
               <p className="text-xs uppercase tracking-[0.3em] text-slate-200/55">Current path</p>
@@ -28,7 +28,7 @@ export function Experience() {
             <Badge>{profile.location}</Badge>
           </div>
 
-          <div className="mt-8 grid gap-4 md:grid-cols-3">
+          <div className="mt-6 grid gap-3 sm:gap-4 md:grid-cols-3">
             <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
               <p className="text-xs uppercase tracking-[0.28em] text-slate-200/55">Focus</p>
               <p className="mt-3 text-base font-semibold text-white">Full-stack foundations</p>
@@ -54,9 +54,9 @@ export function Experience() {
             </div>
           </div>
 
-          <div className="mt-8">
+          <div className="mt-6 sm:mt-8">
             <p className="text-sm font-semibold uppercase tracking-[0.28em] text-slate-200/55">Milestones</p>
-            <ul className="mt-4 space-y-4">
+            <ul className="mt-3 space-y-3 sm:mt-4 sm:space-y-4">
               <li className="flex gap-4 rounded-2xl border border-white/8 bg-white/[0.03] p-4">
                 <span className="mt-2 h-2.5 w-2.5 shrink-0 rounded-full bg-white/60" aria-hidden="true" />
                 <div>
@@ -79,8 +79,8 @@ export function Experience() {
           </div>
         </div>
 
-        <div className="grid gap-5">
-          <div className="card p-7 sm:p-8">
+        <div className="grid gap-4 sm:gap-5">
+          <div className="card p-5 sm:p-7 lg:p-8">
             <p className="text-xs uppercase tracking-[0.3em] text-slate-200/55">Working style</p>
             <h3 className="mt-3 text-xl font-semibold tracking-tight text-white">Clear, calm, deliberate</h3>
             <ul className="mt-5 space-y-3 text-sm leading-relaxed text-slate-200/75">
@@ -99,10 +99,10 @@ export function Experience() {
             </ul>
           </div>
 
-          <div className="card p-7 sm:p-8">
+          <div className="card p-5 sm:p-7 lg:p-8">
             <p className="text-xs uppercase tracking-[0.3em] text-slate-200/55">Stack snapshot</p>
             <h3 className="mt-3 text-xl font-semibold tracking-tight text-white">What I use most</h3>
-            <div className="mt-5 flex flex-wrap gap-2.5">
+            <div className="mt-4 sm:mt-5 flex flex-wrap gap-2">
               {skillHighlights.map((skill) => (
                 <Badge key={skill}>{skill}</Badge>
               ))}

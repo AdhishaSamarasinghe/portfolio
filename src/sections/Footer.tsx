@@ -3,27 +3,27 @@ import { navItems, profile } from '../data/portfolio'
 
 export function Footer() {
   return (
-    <footer className="border-t border-white/10 py-12">
-      <Container className="grid gap-8 sm:grid-cols-2 sm:items-start">
+    <footer className="border-t border-white/10 py-8 sm:py-12">
+      <Container className="grid gap-6 sm:gap-8 sm:grid-cols-2 sm:items-start">
         <div>
-          <p className="text-base font-semibold text-white">{profile.name}</p>
-          <p className="mt-2 text-base text-slate-200/60">© {new Date().getFullYear()} • Built with React + Tailwind.</p>
+          <p className="text-sm sm:text-base font-semibold text-white">{profile.name}</p>
+          <p className="mt-2 text-xs sm:text-base text-slate-200/60">© {new Date().getFullYear()} • Built with React + Tailwind.</p>
         </div>
 
-        <div className="grid gap-4 sm:justify-items-end">
-          <nav className="flex flex-wrap gap-x-4 gap-y-2" aria-label="Footer">
+        <div className="hidden sm:grid gap-3 sm:gap-4 sm:justify-items-end">
+          <nav className="flex flex-wrap gap-x-3 sm:gap-x-4 gap-y-2" aria-label="Footer">
             {navItems.map((i) => (
               <a
                 key={i.id}
                 href={i.id === 'home' ? '#top' : `#${i.id}`}
-                className="text-base font-semibold text-slate-100/70 hover:text-white"
+                className="text-sm sm:text-base font-semibold text-slate-100/70 hover:text-white"
               >
                 {i.label}
               </a>
             ))}
           </nav>
 
-          <div className="flex flex-wrap gap-4 sm:justify-end">
+          <div className="flex flex-wrap gap-2 sm:gap-4 sm:justify-end">
             {profile.social.map((s) => (
               <a
                 key={s.label}

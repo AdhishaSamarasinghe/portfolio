@@ -22,8 +22,8 @@ function ActionLink({ href, children }: { href: string; children: string }) {
 
 export function ProjectCard({ project }: { project: Project }) {
   return (
-    <article className="card group flex h-full flex-col p-7">
-      <div className="flex flex-wrap items-start justify-between gap-5">
+    <article className="card group flex h-full flex-col p-5 sm:p-7">
+      <div className="flex flex-wrap items-start justify-between gap-3 sm:gap-5">
         <div className="flex-1 min-w-[220px]">
           <h3 className="text-xl font-semibold tracking-tight text-white">{project.title}</h3>
           <p className="mt-2 text-base leading-relaxed text-slate-200/75">{project.description}</p>

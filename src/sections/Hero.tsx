@@ -16,33 +16,33 @@ export function Hero() {
     .join('')
 
   return (
-    <section id="top" className="relative overflow-hidden pb-14 pt-18 sm:pb-20 sm:pt-28">
+    <section id="top" className="relative overflow-hidden pb-12 pt-16 sm:pb-18 sm:pt-24 lg:pb-20 lg:pt-28">
       <Container>
-        <div className="grid items-start gap-10 lg:grid-cols-12 lg:gap-12 xl:gap-14">
+        <div className="grid items-start gap-6 sm:gap-8 lg:gap-12 xl:gap-14 lg:grid-cols-12">
           <Reveal className="lg:col-span-7">
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-1 sm:gap-2">
               <Badge>{profile.location}</Badge>
               <Badge>{profile.availability}</Badge>
             </div>
 
-            <h1 className="mt-7 text-[clamp(2.6rem,11vw,4rem)] font-semibold leading-[0.96] tracking-tight sm:text-5xl lg:text-7xl">
+            <h1 className="mt-5 sm:mt-7 text-[clamp(2rem,9vw,4rem)] font-semibold leading-[0.96] tracking-tight sm:text-5xl lg:text-7xl">
               <span className="block text-slate-100/90">I build</span>
               <span className="block bg-gradient-to-r from-white via-zinc-200 to-zinc-400 bg-clip-text text-transparent">
                 reliable software
               </span>
-              <span className="mt-4 block text-xl font-semibold text-slate-100/[0.85] sm:text-3xl">
+              <span className="mt-2 sm:mt-4 block text-lg sm:text-xl font-semibold text-slate-100/[0.85] sm:text-3xl">
                 {profile.name}
               </span>
             </h1>
 
-            <p className="mt-5 max-w-3xl text-base leading-relaxed text-slate-200/80 sm:text-xl">
+            <p className="mt-4 sm:mt-5 max-w-3xl text-base leading-relaxed text-slate-200/80 sm:text-xl">
               {profile.headline}
             </p>
-            <p className="mt-4 max-w-3xl text-sm leading-relaxed text-slate-200/70 sm:text-lg">
+            <p className="mt-2 sm:mt-4 max-w-3xl text-sm leading-relaxed text-slate-200/70 sm:text-lg">
               {profile.summary}
             </p>
 
-            <div className="mt-8 flex flex-wrap items-center gap-3">
+            <div className="mt-6 sm:mt-8 flex flex-wrap items-center gap-2 sm:gap-3\">
               <ButtonLink
                 href="#projects"
                 variant="ghost"
