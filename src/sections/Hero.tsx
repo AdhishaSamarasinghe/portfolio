@@ -42,7 +42,7 @@ export function Hero() {
               {profile.summary}
             </p>
 
-            <div className="mt-6 sm:mt-8 flex flex-wrap items-center gap-2 sm:gap-3\">
+            <div className="mt-6 sm:mt-8 flex flex-wrap items-center gap-2 sm:gap-3">
               <ButtonLink
                 href="#projects"
                 variant="ghost"
@@ -131,29 +131,27 @@ export function Hero() {
 
           <Reveal className="lg:col-span-5">
             <div className="p-3">
-              <div
-                className="group relative aspect-[3/4] w-full max-w-[340px] min-h-[340px] sm:max-w-[380px] sm:min-h-[500px] lg:max-w-full lg:min-h-[560px] mx-auto overflow-hidden rounded-[30px] border border-white/[0.14] bg-zinc-950/75 p-[6px] shadow-[0_16px_46px_rgba(0,0,0,0.6)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_58px_rgba(0,0,0,0.72)]"
-              >
-                  <div className="pointer-events-none absolute inset-0 rounded-[30px] border border-white/20" aria-hidden="true" />
-                  <div
-                    className="pointer-events-none absolute inset-[6px] rounded-[24px] bg-gradient-to-br from-white/16 via-transparent to-zinc-400/14 opacity-70 transition-opacity duration-300 group-hover:opacity-95"
-                    aria-hidden="true"
+              <div className="group relative mx-auto aspect-[3/4] min-h-[340px] w-full max-w-[340px] overflow-hidden rounded-[30px] border border-white/[0.14] bg-zinc-950/75 p-[6px] shadow-[0_16px_46px_rgba(0,0,0,0.6)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_58px_rgba(0,0,0,0.72)] sm:min-h-[500px] sm:max-w-[380px] lg:min-h-[560px] lg:max-w-full">
+                <div className="pointer-events-none absolute inset-0 rounded-[30px] border border-white/20" aria-hidden="true" />
+                <div
+                  className="pointer-events-none absolute inset-[6px] rounded-[24px] bg-gradient-to-br from-white/16 via-transparent to-zinc-400/14 opacity-70 transition-opacity duration-300 group-hover:opacity-95"
+                  aria-hidden="true"
+                />
+                {profile.photo ? (
+                  <img
+                    src={profile.photo}
+                    alt={profile.name}
+                    className="absolute inset-[6px] h-[calc(100%-12px)] w-[calc(100%-12px)] rounded-[24px] object-cover object-center"
+                    loading="lazy"
+                    onError={() => setHasImage(false)}
+                    onLoad={() => setHasImage(true)}
                   />
-                  {profile.photo ? (
-                    <img
-                      src={profile.photo}
-                      alt={profile.name}
-                      className="absolute inset-[6px] h-[calc(100%-12px)] w-[calc(100%-12px)] rounded-[24px] object-cover object-center"
-                      loading="lazy"
-                      onError={() => setHasImage(false)}
-                      onLoad={() => setHasImage(true)}
-                    />
-                  ) : null}
-                  {!hasImage || !profile.photo ? (
-                    <div className="relative m-[6px] flex h-[calc(100%-12px)] w-[calc(100%-12px)] items-center justify-center rounded-[24px] border border-white/20 bg-zinc-900/90 text-5xl font-semibold text-white/[0.85] sm:text-6xl">
-                      {initials}
-                    </div>
-                  ) : null}
+                ) : null}
+                {!hasImage || !profile.photo ? (
+                  <div className="relative m-[6px] flex h-[calc(100%-12px)] w-[calc(100%-12px)] items-center justify-center rounded-[24px] border border-white/20 bg-zinc-900/90 text-5xl font-semibold text-white/[0.85] sm:text-6xl">
+                    {initials}
+                  </div>
+                ) : null}
               </div>
               <div className="mt-3 flex items-center justify-between text-sm text-slate-200/75 sm:text-base">
                 <span className="font-semibold text-white">{profile.name}</span>

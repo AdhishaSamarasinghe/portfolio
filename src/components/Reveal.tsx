@@ -16,10 +16,10 @@ export function Reveal({ className, once = false, children }: RevealProps) {
 
   if (!motion.current) {
     const direction = Math.random() > 0.5 ? 1 : -1
-    const distance = 40 + Math.random() * 30
+    const distance = 24 + Math.random() * 18
     motion.current = {
       offsetX: direction * distance,
-      offsetY: 12 + Math.random() * 10,
+      offsetY: 10 + Math.random() * 8,
       delay: Math.round(Math.random() * 180),
     }
   }
@@ -59,7 +59,7 @@ export function Reveal({ className, once = false, children }: RevealProps) {
   }, [])
 
   return (
-    <div ref={ref} className={className}>
+    <div ref={ref} className={cn('overflow-x-clip', className)}>
       <div
         className={cn(
           'motion-reduce:opacity-100 motion-reduce:transform-none',
@@ -72,7 +72,7 @@ export function Reveal({ className, once = false, children }: RevealProps) {
             : {
                 transform: visible
                   ? 'translate3d(0, 0, 0)'
-                  : `translate3d(${motion.current.offsetX}vw, ${motion.current.offsetY}px, 0)`,
+                  : `translate3d(${motion.current.offsetX}px, ${motion.current.offsetY}px, 0)`,
                 transitionDelay: `${motion.current.delay}ms`,
               }
         }
